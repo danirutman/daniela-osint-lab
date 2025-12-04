@@ -84,7 +84,7 @@ a:hover {
     position: absolute;
     width: 60px; 
     height: auto;
-    top: 5px; 
+    top: 3px; 
     left: 50%; 
     transform: translateX(-50%); 
     animation: float 4s ease-in-out infinite;
