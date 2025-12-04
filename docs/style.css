@@ -31,3 +31,77 @@ a {
   0 0 20px rgba(69, 162, 158, 1), 
   0 0 40px rgba(69, 162, 158, 0.7); 
 }
+
+#explore-section {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding: 15px 0 20px 0; 
+    width: 300px; 
+    
+    background-image: url('planet-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-color: #1f2833; 
+    border-radius: 20px; 
+    
+    z-index: 100;
+    text-align: center;
+    overflow: hidden; 
+}
+
+ {
+    padding-bottom: 100px;
+}
+
+.alien { 
+    position: absolute;
+    width: 60px; 
+    height: auto;
+    top: -45px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    animation: float 4s ease-in-out infinite;
+}
+
+.satellite { 
+    position: absolute;
+    width: 30px; 
+    height: auto;
+    top: -50px; 
+    left: 40%;
+    animation: orbit 4s linear infinite; 
+}
+
+.stars-sparkle {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  width: 2px;
+  height: 2px;
+  background: white; 
+  box-shadow: 
+    10px 50px 0 0 #fff, -40px -10px 0 0 #fff, -10px -50px 0 0 #f0f0f0, 
+    60px -70px 0 0 #fff, -70px 30px 0 0 #f0f0f0, 100px 10px 0 0 #fff, 
+    -120px 40px 0 0 #f0f0f0; 
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#explore-section:hover .stars-sparkle
+  opacity: 1; 
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -5px); }
+    100% { transform: translate(-50%, 0); }
+}
+@keyframes orbit {
+    0% { transform: translate(-100px, -20px) rotate(0deg); }
+    25% { transform: translate(100px, -20px) rotate(90deg); }
+    50% { transform: translate(100px, 40px) rotate(180deg); }
+    75% { transform: translate(-100px, 40px) rotate(270deg); }
+    100% { transform: translate(-100px, -20px) rotate(360deg); }
+}
