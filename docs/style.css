@@ -1,76 +1,50 @@
-/* BASE STYLES */
 body {
-  font-family: Arial, sans-serif; /* Recommended: Set a default font family */
-  margin: 0; /* Recommended: Remove default body margin */
+  font-family: Arial, sans-serif; 
+  margin: 0; 
   background: #0b0c10; 
-  color: #f8f8f8; 
+  color: #f8f8f8;
 }
 
-/* --- */
-
-/* HEADER STYLES */
 header {
   background: #1f2833; 
-  padding: 20px;
+  padding: 20px; 
   text-align: center;
 }
 
 h1 {
-  color: #66fcf1; 
+  color: #66fcf1;
 }
 
-/* --- */
-
-/* MAIN CONTENT STYLES */
 main {
   padding: 40px;
-}
-
-h2 {
-  color: #66fcf1; 
 }
 
 a {
   color: #66fcf1; 
   text-decoration: none;
-  transition: color 0.3s; /* For smooth link hover */
+  /* Added: Transition for smooth link color change */
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #45a29e; 
+  color: #45a29e; /* Optional: Slightly change link color on hover */
 }
 
-/* --- */
-
-/* PROJECT CARD STYLES (Includes the Glow) */
+/* PROJECT CARD: MODIFIED FOR GLOW */
 .project-card {
-  background: #1f2833;
-  padding: 20px;
-  margin: 20px 0;
-  border-left: 4px solid #45a29e; /* The vertical theme bar */
+  background: #1f2833; 
+  padding: 20px; 
+  margin: 20px 0; 
+  border-left: 4px solid #45a29e;
   
-  /* Initial state: Prepare for the glowing transition */
-  box-shadow: 0 0 1px rgba(69, 162, 158, 0); /* Invisible initial shadow */
-  transition: box-shadow 0.3s ease-in-out, transform 0.2s; /* Smooth animation for glow and lift */
+  /* ADDED: Initial state for smooth transition */
+  box-shadow: 0 0 1px rgba(69, 162, 158, 0); 
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Hover-to-Glow Effect */
+/* ADDED: Hover-to-Glow Effect */
 .project-card:hover {
-  /* Stacked box-shadow for a deep, diffused glow */
-  box-shadow: 0 0 15px rgba(69, 162, 158, 0.8), 
-              0 0 30px rgba(69, 162, 158, 0.5); 
-  /* Slight lift for visual pop */
-  transform: translateY(-2px); 
-}
-
-/* --- */
-
-/* PROJECT CARD INNER TEXT STYLES (Refinement) */
-.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-.project-card p {
-  margin-bottom: 0;
-  color: #c5c6c7; /* Lighter text color for description */
+  /* This creates the glowing shadow using the border color #45a29e */
+  box-shadow: 0 0 15px rgba(69, 162, 158, 0.8), /* Main glow */
+              0 0 30px rgba(69, 162, 158, 0.5); /* Wider, softer glow */
 }
