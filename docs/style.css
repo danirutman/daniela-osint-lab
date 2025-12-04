@@ -1,4 +1,4 @@
-/BASE STYLE/
+/* BASE STYLES */
 body {
   font-family: Arial, sans-serif; /* Recommended: Set a default font family */
   margin: 0; /* Recommended: Remove default body margin */
@@ -6,7 +6,9 @@ body {
   color: #f8f8f8; 
 }
 
-/HEADER STYLE/
+/* --- */
+
+/* HEADER STYLES */
 header {
   background: #1f2833; 
   padding: 20px;
@@ -17,7 +19,9 @@ h1 {
   color: #66fcf1; 
 }
 
-/* MAIN STYLES */
+/* --- */
+
+/* MAIN CONTENT STYLES */
 main {
   padding: 40px;
 }
@@ -36,28 +40,32 @@ a:hover {
   color: #45a29e; 
 }
 
-/PROJECT CARD STYLES/
+/* --- */
+
+/* PROJECT CARD STYLES (Includes the Glow) */
 .project-card {
   background: #1f2833;
   padding: 20px;
   margin: 20px 0;
-  border-left: 4px solid #45a29e; /Vertical theme bar/
+  border-left: 4px solid #45a29e; /* The vertical theme bar */
   
-  /Initial state: Prepare for the glowing transition/
-  box-shadow: 0 0 1px rgba(69, 162, 158, 0); 
-  transition: box-shadow 0.3s ease-in-out, transform 0.2s; 
+  /* Initial state: Prepare for the glowing transition */
+  box-shadow: 0 0 1px rgba(69, 162, 158, 0); /* Invisible initial shadow */
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s; /* Smooth animation for glow and lift */
 }
 
-/Hover-to-Glow Effect/
+/* Hover-to-Glow Effect */
 .project-card:hover {
-  /*Stacked box-shadow for a deep, diffused glow*/
+  /* Stacked box-shadow for a deep, diffused glow */
   box-shadow: 0 0 15px rgba(69, 162, 158, 0.8), 
               0 0 30px rgba(69, 162, 158, 0.5); 
   /* Slight lift for visual pop */
   transform: translateY(-2px); 
 }
 
-/*PROJECT CARD INNER TEXT STYLES (Refinement)*/
+/* --- */
+
+/* PROJECT CARD INNER TEXT STYLES (Refinement) */
 .project-card h3 {
   margin-top: 0;
   margin-bottom: 5px;
