@@ -77,14 +77,14 @@ a:hover {
 
 #explore-section:hover h2 {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out; 
+    transition: opacity 0.2s ease-in-out; 
 }
 
 .alien { 
     position: absolute;
     width: 60px; 
     height: auto;
-    top: -02px;
+    top: -01px;
     left: 50%; 
     transform: translateX(-50%); 
     animation: float 4s ease-in-out infinite;
