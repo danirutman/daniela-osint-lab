@@ -42,16 +42,35 @@
 
 <section id="explore-section">
   <img src="alien.png" alt="Alien icon" class="alien"> 
-  <img src="satellite.png" alt="Satellite icon" class="satellite"> <div class="stars-sparkle"></div>
-  <h2>Explore</h2>
-</section>
-
-<section id="explore-section">
-  <img src="alien.png" alt="Alien icon" class="alien"> 
   <div class="stars-sparkle"></div>
   <h2>Explore</h2>
 </section>
-<img src="satellite.png" alt="Satellite icon" class="satellite-cursor">
+<img src="satellite.png" alt="Satellite icon" class="satellite-cursor"> 
+
+<script>
+  const exploreButton = document.getElementById('explore-section');
+  const satelliteCursor = document.querySelector('.satellite-cursor');
+  
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX - 20;
+    const y = e.clientY - 20;
+    satelliteCursor.style.left = x + 'px';
+    satelliteCursor.style.top = y + 'px';
+  });
+
+  exploreButton.addEventListener('mouseenter', () => {
+    satelliteCursor.style.opacity = '1';
+    document.body.style.cursor = 'none'; 
+  });
+  
+  exploreButton.addEventListener('mouseleave', () => {
+    satelliteCursor.style.opacity = '0';
+    document.body.style.cursor = 'default';
+  });
+</script>
+    
+</body>
+</html>
     
   </main>
 </body>
