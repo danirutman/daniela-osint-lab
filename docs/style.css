@@ -75,11 +75,16 @@ a:hover {
     top: -5px; 
 }
 
+#explore-section:hover h2 {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+
 .alien { 
     position: absolute;
     width: 60px; 
     height: auto;
-    top: -07px;
+    top: -02px;
     left: 50%; 
     transform: translateX(-50%); 
     animation: float 4s ease-in-out infinite;
