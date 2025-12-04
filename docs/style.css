@@ -103,7 +103,7 @@ a:hover {
     height: auto;
     opacity: 0; 
     transition: opacity 0.2s; 
-    z-index: 9999; 
+    z-index: 99999; 
 }
 
 .stars-sparkle {
