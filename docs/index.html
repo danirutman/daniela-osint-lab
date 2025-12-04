@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniela OSINT Lab</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {font-family: Arial, sans-serif; margin:0; background:#0b0c10; color:#f8f8f8;}
-    header {background:#1f2833; padding:20px; text-align:center;}
-    h1 {color:#66fcf1;}
-    main {padding:40px;}
-    a {color:#66fcf1; text-decoration:none;}
-    .project-card {background:#1f2833; padding:20px; margin:20px 0; border-left:4px solid #45a29e;}
-  </style>
 </head>
-  
-<body>
 
+<body>
   <header>
-    <h1>👩‍💻​ Daniela OSINT Lab</h1>
+    <h1>👩‍💻 Daniela OSINT Lab</h1>
     <p>Open-source investigations • Verification • Geolocation</p>
   </header>
 
@@ -28,8 +17,12 @@
     <section>
       <h2>Projects</h2>
       <div class="project-card">
-        <h3><a href="https://github.com/danirutman/daniela-osint-lab/tree/main/2023-israel-rocket-impact-osint"target="_blank">
-    Israel Rocket Impact OSINT (2023)</a></h3>
+        <h3>
+          <a href="https://github.com/danirutman/daniela-osint-lab/tree/main/2023-israel-rocket-impact-osint"
+             target="_blank" rel="noopener noreferrer">
+             Israel Rocket Impact OSINT (2023)
+          </a>
+        </h3>
         <p>Verification and geolocation of rocket impacts in Israel (Oct–Nov 2023).</p>
       </div>
     </section>
@@ -40,35 +33,33 @@
          Built entirely in HTML/CSS and powered by GitHub Pages.</p>
     </section>
 
-<section id="explore-section">
-  <img src="alien.png" alt="Alien icon" class="alien"> 
-  <div class="stars-sparkle"></div>
-  <h2>Explore</h2>
- </section>
-    
-</main>  <img src="satellite.png" alt="Satellite icon" class="satellite-cursor"> 
-  
-<script>
-  const exploreButton = document.getElementById('explore-section');
-  const satelliteCursor = document.querySelector('.satellite-cursor');
-  
-  document.addEventListener('mousemove', (e) => {
-    const x = e.clientX - 20;
-    const y = e.clientY - 20;
-    satelliteCursor.style.left = x + 'px';
-    satelliteCursor.style.top = y + 'px';
-  });
+    <section id="explore-section">
+      <img src="alien.png" alt="Alien icon" class="alien"> 
+      <div class="stars-sparkle"></div>
+      <h2>Explore</h2>
+    </section>
+  </main>
 
-  exploreButton.addEventListener('mouseenter', () => {
-    satelliteCursor.style.opacity = '1';
-  });
+  <img src="satellite.png" alt="Satellite icon" class="satellite-cursor">
   
-  exploreButton.addEventListener('mouseleave', () => {
-    satelliteCursor.style.opacity = '0';
-    document.body.style.cursor = 'default';
-  });
-</script>
+  <script>
+const exploreButton = document.getElementById('explore-section');
+const satelliteCursor = document.querySelector('.satellite-cursor');
 
-    
+document.addEventListener('mousemove', (e) => {
+  const x = e.clientX - satelliteCursor.offsetWidth/2;
+  const y = e.clientY - satelliteCursor.offsetHeight/2;
+  satelliteCursor.style.left = x + 'px';
+  satelliteCursor.style.top = y + 'px';
+});
+
+exploreButton.addEventListener('mouseenter', () => {
+  satelliteCursor.style.opacity = '1';
+});
+
+exploreButton.addEventListener('mouseleave', () => {
+  satelliteCursor.style.opacity = '0';
+});
+  </script>
 </body>
 </html>
