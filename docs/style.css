@@ -1,7 +1,7 @@
 body {
   background-color:#0b0c10;
   color:#f8f8f8;
- Cursor: default;
+  cursor: none !important;
 }
 
 h1 {
@@ -84,7 +84,7 @@ a:hover {
     position: absolute;
     width: 60px; 
     height: auto;
-    top: 7px; 
+    top: 10px; 
     left: 50%; 
     transform: translateX(-50%); 
     animation: float 4s ease-in-out infinite;
@@ -103,7 +103,7 @@ a:hover {
     height: auto;
     opacity: 0; 
     transition: opacity 0.2s; 
-    z-index: 99999; 
+    z-index: 99999 !important;
 }
 
 .stars-sparkle {
