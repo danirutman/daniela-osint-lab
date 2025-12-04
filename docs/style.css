@@ -22,12 +22,12 @@ a {
   padding: 20px;
   margin: 20px 0;
   border-left: 4px solid #45a29e;
-  box-shadow:
-    0 0 20px rgba(69, 162, 158, 1), 
-    0 0 40px rgba(69, 162, 158, 0.7); 
+  box-shadow: 0 0 1px rgba(69, 162, 158, 0); 
   transition: box-shadow 0.3s ease-in-out; 
 }
 
 .project-card:hover {
-  box-shadow: 0 0 15px #45a29e; 
+  box-shadow:
+  0 0 20px rgba(69, 162, 158, 1), 
+  0 0 40px rgba(69, 162, 158, 0.7); 
 }
