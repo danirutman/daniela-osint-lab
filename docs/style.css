@@ -84,12 +84,12 @@ a:hover {
     position: absolute;
     width: 60px; 
     height: auto;
-    top: -01px;
+    top: 5px; 
     left: 50%; 
     transform: translateX(-50%); 
     animation: float 4s ease-in-out infinite;
-    opacity: 0; 
-    transition: opacity 0.4s ease-in-out; 
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
 #explore-section:hover .alien {
