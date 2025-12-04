@@ -105,23 +105,17 @@ a:hover {
     height: 2px;
     background: white; 
     box-shadow: 
-      10px 50px 0 0 #fff, 
-      -40px -10px 0 0 #fff, 
-      -10px -50px 0 0 #f0f0f0, 
-        60px -70px 0 0 #fff, 
-      -70px 30px 0 0 #f0f0f0, 
-      100px 10px 0 0 #fff, 
-        -120px 40px 0 0 #f0f0f0, 
-      15px 15px 0 0 #fff, 
-      -80px -20px 0 0 #f0f0f0,
-       -125px 80px 0 0 #fff,
-        150px -50px 0 0 #fff,
-        -50px -100px 0 0 #f0f0f0,
-        90px 10px 0 0 #fff,
-        -10px 140px 0 0 #f0f0f0,
-        130px -120px 0 0 #fff,
-        -20px -70px 0 0 #f0f0f0,
-        160px 40px 0 0 #fff;
+      -125px 80px 0 0 #fff,
+         150px -50px 0 0 #fff,
+         -50px -100px 0 0 #f0f0f0,
+          90px 10px 0 0 #fff,
+         -10px 140px 0 0 #f0f0f0,
+         130px -120px 0 0 #fff,
+         -20px -70px 0 0 #f0f0f0,
+         160px 40px 0 0 #fff,
+         10px -140px 0 0 #fff,
+         -140px 10px 0 0 #f0f0f0,
+         120px -30px 0 0 #fff;
   animation: twinkle 4s infinite alternate; 
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
