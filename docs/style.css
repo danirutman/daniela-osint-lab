@@ -392,26 +392,12 @@ main {
 }
 
 /* ── Card footer ── */
-
 .card-footer {
   display: flex;
   align-items: center;
-  gap: 10px;         
   justify-content: space-between;
-}
-
-/* group buttons */
-.card-footer a {
-  min-width: 110px;          
-  text-align: center;
-}
-
-.btn-read,
-.btn-download {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
 }
 
 .confidence {
@@ -460,29 +446,6 @@ main {
   border-color: var(--border);
   cursor: not-allowed;
   pointer-events: none;
-}
-
-/* Secondary action (Full Report) */
-.btn-download {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(0,229,160,0.35);
-  padding: 6px 14px;
-  border-radius: 1px;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-download:hover {
-  background: var(--accent);
-  color: #060d0f;
-  border-color: var(--accent);
 }
 
 /* ── About section ── */
@@ -569,7 +532,6 @@ footer span { color: var(--accent); }
   .about-grid { grid-template-columns: 1fr; }
   .nav-strip  { flex-wrap: wrap; gap: 1rem; justify-content: center; }
 }
-
 
 
 
