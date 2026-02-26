@@ -448,6 +448,29 @@ main {
   pointer-events: none;
 }
 
+/* Secondary action (Full Report) */
+.btn-download{
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 1px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-download:hover{
+  color: var(--accent);
+  border-color: rgba(0,229,160,0.35);
+  background: rgba(0,229,160,0.05);
+}
+
 /* ── About section ── */
 .about-section {
   margin-top: 80px;
