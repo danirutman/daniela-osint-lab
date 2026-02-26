@@ -449,26 +449,26 @@ main {
 }
 
 /* Secondary action (Full Report) */
-.btn-download{
+.btn-download {
   font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  padding: 6px 12px;
+  color: var(--accent);
+  border: 1px solid rgba(0,229,160,0.35);
+  padding: 6px 14px;
   border-radius: 1px;
   background: transparent;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
   display: inline-block;
 }
 
-.btn-download:hover{
-  color: var(--accent);
-  border-color: rgba(0,229,160,0.35);
-  background: rgba(0,229,160,0.05);
+.btn-download:hover {
+  background: var(--accent);
+  color: #060d0f;
+  border-color: var(--accent);
 }
 
 /* ── About section ── */
