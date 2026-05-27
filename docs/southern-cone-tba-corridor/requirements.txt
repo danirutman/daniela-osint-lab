@@ -1,0 +1,5 @@
+google-earth-pro
+sentinel-2-l2a
+qgis>=3.0
+pandas
+geopandas
