@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southern Cone Human Trafficking — TBA Corridor · Brief · Daniela Rutman</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #ffffff;
+    --bg2:         #f7f8fa;
+    --bg3:         #f0f2f5;
+    --border:      #e2e6eb;
+    --border2:     #c8d0da;
+    --accent:      #1a6b4a;
+    --accent2:     #1a4fa6;
+    --accent3:     #c94c1a;
+    --warn:        #a06b00;
+    --text:        #2c3540;
+    --text-dim:    #6b7f94;
+    --text-bright: #0f1820;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 210mm;
+    background: #fff;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 9px;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    padding: 9mm 12mm 8mm;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .s-label {
+    font-family: var(--mono);
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .s-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    opacity: 0.3;
+  }
+
+  /* ── HEADER ── */
+  .hdr {
+    border-top: 4px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 8px 11px 7px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hdr::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 13px, rgba(26,107,74,0.03) 13px, rgba(26,107,74,0.03) 14px),
+      repeating-linear-gradient(90deg, transparent, transparent 13px, rgba(26,107,74,0.02) 13px, rgba(26,107,74,0.02) 14px);
+    pointer-events: none;
+  }
+  .hdr-inner { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; position: relative; }
+  .hdr-left {}
+  .hdr-top {
+    font-family: var(--mono);
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .tlp {
+    background: rgba(26,107,74,0.08);
+    border: 1px solid rgba(26,107,74,0.3);
+    padding: 1px 5px;
+    font-size: 6.5px;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-bright);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  h1 span { color: var(--accent); }
+  .hdr-sub {
+    font-size: 8.5px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+    max-width: 360px;
+  }
+  .meta-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    font-family: var(--mono);
+  }
+  .meta-cell { background: var(--bg); padding: 3px 6px; }
+  .meta-lbl  { font-size: 6px;   letter-spacing: 0.14em; color: var(--text-dim); text-transform: uppercase; }
+  .meta-val  { font-size: 7.5px; color: var(--text-bright); font-weight: 500; }
+
+  /* corridor map in header */
+  .hdr-map {
+    width: 88px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .hdr-map img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hdr-map-cap {
+    font-family: var(--mono);
+    font-size: 5.5px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 2px 4px;
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── MAIN GRID: 2 columns ── */
+  .main { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; align-items: start; }
+  .col  { display: flex; flex-direction: column; gap: 7px; }
+
+  /* ── PROSE ── */
+  .prose { font-size: 8.5px; line-height: 1.65; color: var(--text); }
+  .prose strong { color: var(--text-bright); font-weight: 600; }
+
+  /* ── METHODS ── */
+  .methods { display: flex; flex-wrap: wrap; gap: 3px; }
+  .mtag {
+    font-family: var(--mono);
+    font-size: 6.5px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    padding: 2px 6px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    background: var(--bg2);
+  }
+  .method-note {
+    margin-top: 5px;
+    font-size: 8px;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+  .method-note span {
+    font-family: var(--mono);
+    font-size: 7px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ── SATELLITE IMAGE STRIP ── */
+  .img-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .img-wrap {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .img-wrap img {
+    width: 100%;
+    height: 68px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .img-cap {
+    font-family: var(--mono);
+    font-size: 5.5px;
+    color: var(--text-dim);
+    letter-spacing: 0.07em;
+    padding: 2px 5px;
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    line-height: 1.4;
+  }
+
+  /* ── SITES TABLE ── */
+  .sites { display: flex; flex-direction: column; border: 1px solid var(--border); }
+  .site-row {
+    display: grid;
+    grid-template-columns: 54px 1fr 42px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .site-row:last-child { border-bottom: none; }
+  .site-row::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+  }
+  .site-row.alpha::before   { background: var(--accent);  }
+  .site-row.bravo::before   { background: var(--accent2); }
+  .site-row.charlie::before { background: var(--warn);    }
+
+  .site-id { padding: 6px 7px 6px 9px; border-right: 1px solid var(--border); }
+  .site-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 1px 4px;
+    border: 1px solid;
+    margin-bottom: 2px;
+  }
+  .site-badge.alpha   { color: var(--accent);  border-color: rgba(26,107,74,0.35);  background: rgba(26,107,74,0.06);  }
+  .site-badge.bravo   { color: var(--accent2); border-color: rgba(26,79,166,0.35);  background: rgba(26,79,166,0.06);  }
+  .site-badge.charlie { color: var(--warn);    border-color: rgba(160,107,0,0.35);  background: rgba(160,107,0,0.06);  }
+  .site-loc { font-size: 6.5px; color: var(--text-dim); line-height: 1.4; }
+
+  .site-body { padding: 6px 8px; }
+  .site-finding { font-size: 8px; line-height: 1.55; color: var(--text); }
+  .stags { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 3px; }
+  .stag {
+    font-family: var(--mono);
+    font-size: 6px;
+    padding: 1px 3px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    background: var(--bg2);
+  }
+
+  .site-conf {
+    padding: 6px 7px;
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+  .conf-lbl   { font-family: var(--mono); font-size: 5.5px; letter-spacing: 0.1em; color: var(--text-dim); }
+  .conf-badge {
+    font-family: var(--mono);
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 2px 5px;
+    border: 1px solid;
+  }
+  .conf-badge.high { color: var(--accent);  border-color: rgba(26,107,74,0.35);  background: rgba(26,107,74,0.06);  }
+  .conf-badge.mod  { color: var(--warn);    border-color: rgba(160,107,0,0.35);  background: rgba(160,107,0,0.06);  }
+
+  /* ── KEY FINDINGS ── */
+  .findings { display: flex; flex-direction: column; gap: 4px; }
+  .finding {
+    display: flex;
+    gap: 6px;
+    padding: 5px 7px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+  }
+  .finding.blue  { border-left-color: var(--accent2); }
+  .finding.amber { border-left-color: var(--warn);    }
+  .finding.red   { border-left-color: var(--accent3); }
+  .f-num  { font-family: var(--mono); font-size: 6.5px; font-weight: 600; color: var(--text-dim); flex-shrink: 0; padding-top: 1px; }
+  .f-text { font-size: 8px; line-height: 1.5; color: var(--text); }
+  .f-text strong { color: var(--text-bright); }
+
+  /* ── LISTA SUJA STATS ── */
+  .ls-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+  }
+  .ls-stat { background: var(--bg); padding: 5px 7px; }
+  .ls-num  { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); line-height: 1.1; }
+  .ls-desc { font-size: 7px; color: var(--text-dim); line-height: 1.35; margin-top: 1px; }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    padding: 7px 9px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+  }
+  .conclusion .prose { font-size: 8px; }
+
+  /* ── FOOTER ── */
+  .ftr {
+    border-top: 1px solid var(--border);
+    padding-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 6px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  @media print {
+    html, body { width: 210mm; }
+    .page { padding: 9mm 12mm 7mm; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <div class="hdr">
+    <div class="hdr-inner">
+      <div class="hdr-left">
+        <div class="hdr-top">OSINT ASSESSMENT · ANALYTICAL BRIEF <span class="tlp">TLP:CLEAR</span></div>
+        <h1>Southern Cone Human Trafficking<br><span>— TBA Corridor</span></h1>
+        <div class="hdr-sub">Open-source geospatial and documentary assessment of trafficking infrastructure · Argentina · Brazil · Paraguay</div>
+        <div class="meta-row">
+          <div class="meta-cell"><div class="meta-lbl">Author</div><div class="meta-val">Daniela Rutman</div></div>
+          <div class="meta-cell"><div class="meta-lbl">Date</div><div class="meta-val">May 2026</div></div>
+          <div class="meta-cell"><div class="meta-lbl">Classification</div><div class="meta-val">Unclassified</div></div>
+          <div class="meta-cell"><div class="meta-lbl">Sites Assessed</div><div class="meta-val">Alpha · Bravo · Charlie</div></div>
+          <div class="meta-cell"><div class="meta-lbl">Type</div><div class="meta-val">Analytical Brief</div></div>
+        </div>
+      </div>
+      <div class="hdr-map">
+        <img src="datawrapper-southern-cone-human-trafficking-tba-corridor-.png"
+             alt="TBA Corridor map"
+             style="height:88px; object-position: center top;">
+        <div class="hdr-map-cap">Fig. 1 · TBA Corridor · Site Overview</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAIN BODY ── -->
+  <div class="main">
+
+    <!-- LEFT COLUMN -->
+    <div class="col">
+
+      <!-- SUMMARY -->
+      <div>
+        <div class="s-label">Executive Summary</div>
+        <p class="prose">This report maps and corroborates human trafficking infrastructure across the Tri-Border Area (TBA) corridor using open-source satellite imagery, prosecutorial data, and documentary evidence. Three crossing sites were assessed — each representing a distinct modality — supported by multi-temporal Sentinel-2 spectral analysis, Google Earth Pro imagery, and cross-referencing against Brazil's forced-labour enforcement database (Lista Suja). The assessment identifies structural indicators of clandestine access at two sites, documents a systematic forced-labour absorption pattern in the Pantanal border zone, and establishes that the three sites function as an integrated system offering trafficking networks operational flexibility across formal, informal, and clandestine crossing types.</p>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div>
+        <div class="s-label">Methodology</div>
+        <div class="methods">
+          <span class="mtag">Google Earth Pro</span>
+          <span class="mtag">Sentinel-2 L2A</span>
+          <span class="mtag">NDVI</span>
+          <span class="mtag">Color Infrared (CIR)</span>
+          <span class="mtag">NDWI</span>
+          <span class="mtag">Multi-temporal analysis</span>
+          <span class="mtag">Lista Suja cross-reference</span>
+          <span class="mtag">State Dept TIP Reports</span>
+          <span class="mtag">UNODC · InSight Crime · OCCRP</span>
+        </div>
+        <div class="method-note">
+          Geospatial layer: <span>Sentinel-2 L2A</span> multi-temporal imagery (NDVI · CIR · NDWI) identifies surface disturbance, informal access infrastructure, and seasonal riverbank variation across acquisition windows 2019–2026.
+          Documentary layer: <span>UN Special Rapporteur</span> reports on trafficking in persons · <span>U.S. State Dept</span> TIP Reports (2021–2025) · <span>UNODC</span> Global Report on Trafficking in Persons · <span>InSight Crime</span> and <span>OCCRP</span> network investigations · <span>Lista Suja</span> prosecutorial cross-reference.
+        </div>
+      </div>
+
+      <!-- SATELLITE IMAGES -->
+      <div>
+        <div class="s-label">Spectral Evidence</div>
+        <div class="img-strip">
+          <div class="img-wrap">
+            <img src="alpha_ndvi_may2026.png" alt="Site Alpha — NDVI May 2026">
+            <div class="img-cap">NDVI · Site Alpha · May 2026<br>Low-NDVI zone at shoreline consistent with informal dock infrastructure</div>
+          </div>
+          <div class="img-wrap">
+            <img src="charlie_cir_apr2026.png" alt="Site Charlie — CIR Apr 2026">
+            <div class="img-cap">CIR · Site Charlie · Apr 2026<br>Linear corridor inland from riverbank — vehicle access track beyond inspection range</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTA SUJA STATS -->
+      <div>
+        <div class="s-label">Lista Suja — Corridor Cross-Reference</div>
+        <div class="ls-strip">
+          <div class="ls-stat"><div class="ls-num">13</div><div class="ls-desc">Entries in corridor municipalities · 2022–2025</div></div>
+          <div class="ls-stat"><div class="ls-num">109</div><div class="ls-desc">Workers in conditions analogous to forced labour</div></div>
+          <div class="ls-stat"><div class="ls-num">5</div><div class="ls-desc">Entries in Corumbá alone — livestock / ranching</div></div>
+          <div class="ls-stat"><div class="ls-num">MS · PR</div><div class="ls-desc">Dominant states — Mato Grosso do Sul · Paraná</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col">
+
+      <!-- SITES -->
+      <div>
+        <div class="s-label">Site Assessment</div>
+        <div class="sites">
+
+          <div class="site-row alpha">
+            <div class="site-id">
+              <div class="site-badge alpha">ALPHA</div>
+              <div class="site-loc">Foz do Iguaçu<br>Lake Itaipú · BR/PY</div>
+            </div>
+            <div class="site-body">
+              <div class="site-finding">Persistent informal dock confirmed across 3 Google Earth acquisitions (2019–2022) and Sentinel-2 NDVI/NDWI. Inconsistent with natural formation.</div>
+              <div class="stags"><span class="stag">Water crossing</span><span class="stag">NDVI · NDWI</span><span class="stag">Multi-temporal GE</span></div>
+            </div>
+            <div class="site-conf"><div class="conf-lbl">CONFIDENCE</div><span class="conf-badge mod">MOD</span></div>
+          </div>
+
+          <div class="site-row bravo">
+            <div class="site-id">
+              <div class="site-badge bravo">BRAVO</div>
+              <div class="site-loc">Ponta Porã<br>P.J. Caballero · BR/PY</div>
+            </div>
+            <div class="site-body">
+              <div class="site-finding">No physical barrier — continuous street grid across boundary. Zero Lista Suja entries: absence is the finding. Most permissive crossings produce fewest records.</div>
+              <div class="stags"><span class="stag">Open dry border</span><span class="stag">No spectral anomaly</span><span class="stag">Structural gap</span></div>
+            </div>
+            <div class="site-conf"><div class="conf-lbl">CONFIDENCE</div><span class="conf-badge high">HIGH</span></div>
+          </div>
+
+          <div class="site-row charlie">
+            <div class="site-id">
+              <div class="site-badge charlie">CHARLIE</div>
+              <div class="site-loc">Posadas / Encarnación<br>Paraná River · AR/PY</div>
+            </div>
+            <div class="site-body">
+              <div class="site-finding">Informal access 7 km beyond inspection perimeter. NDVI and CIR (Jan 2025 · Apr 2026) show persistent vegetation gap. Austral summer low-water expands accessible riverbank.</div>
+              <div class="stags"><span class="stag">River crossing</span><span class="stag">NDVI · CIR</span><span class="stag">Seasonal variation</span></div>
+            </div>
+            <div class="site-conf"><div class="conf-lbl">CONFIDENCE</div><span class="conf-badge mod">MOD</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- KEY FINDINGS — all four together -->
+      <div>
+        <div class="s-label">Key Findings</div>
+        <div class="findings">
+          <div class="finding">
+            <span class="f-num">01</span>
+            <span class="f-text"><strong>Three-site integrated system.</strong> Alpha (formal concealment), Bravo (frictionless movement), Charlie (clandestine river access) function together — networks shift between them as enforcement pressure changes.</span>
+          </div>
+          <div class="finding blue">
+            <span class="f-num">02</span>
+            <span class="f-text"><strong>Corumbá cluster is systematic.</strong> Five Lista Suja livestock entries in one Pantanal municipality (2024–2025). Remote fazendas are documented forced-labour absorption points — not random detections.</span>
+          </div>
+          <div class="finding amber">
+            <span class="f-num">03</span>
+            <span class="f-text"><strong>Absence as evidence.</strong> Zero Lista Suja entries at Ponta Porã reflects inspection gaps, not absence of exploitation — the structural gap documented by law enforcement operations.</span>
+          </div>
+          <div class="finding red">
+            <span class="f-num">04</span>
+            <span class="f-text"><strong>Multi-stream convergence.</strong> Same corridor routes serve drug, arms, cigarette, and human trafficking simultaneously. One 2023 network (OCCRP) used both labour trafficking and goods smuggling through the same crossing infrastructure.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCLUSION -->
+      <div class="conclusion">
+        <div class="s-label" style="margin-bottom:4px;">Conclusion</div>
+        <p class="prose">The multi-source OSINT assessment demonstrates that trafficking infrastructure in the TBA operates across a spectrum of formality — from clandestine riverbank access to high-volume formal bridge crossings — with each modality presenting vulnerabilities that conventional enforcement is structurally ill-equipped to address alone. The convergence of satellite indicators, Lista Suja prosecutorial data, and documented criminal network activity produces a coherent picture of a region where exploitation is sustained by geography, institutional capacity gaps, and the concealment afforded by the volume of legitimate commerce.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ftr">
+    <span>Southern Cone Human Trafficking — TBA Corridor · Daniela Rutman · May 2026</span>
+    <span>ANALYTICAL BRIEF · FULL REPORT AVAILABLE ON REQUEST</span>
+    <span>TLP:CLEAR · UNCLASSIFIED</span>
+  </div>
+
+</div>
+</body>
+</html>
