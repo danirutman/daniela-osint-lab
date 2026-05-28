@@ -29,10 +29,37 @@
       <h2>Investigation Reports</h2>
     </div>
 
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <div class="filter-row">
+        <span class="filter-label">FILTER</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">TOPIC</span>
+        <button class="filter-btn" data-filter="geolocation">Geolocation</button>
+        <button class="filter-btn" data-filter="conflict">Conflict</button>
+        <button class="filter-btn" data-filter="verification">Verification</button>
+        <button class="filter-btn" data-filter="human-rights">Human Rights</button>
+        <button class="filter-btn" data-filter="geospatial">Geospatial</button>
+        <button class="filter-btn" data-filter="satellite">Satellite</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">REGION</span>
+        <button class="filter-btn" data-filter="israel-lebanon">Israel / Lebanon</button>
+        <button class="filter-btn" data-filter="tba">Argentina · Brazil · Paraguay</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">DATE</span>
+        <button class="filter-btn" data-filter="2023">2023</button>
+        <button class="filter-btn" data-filter="2026">2026</button>
+      </div>
+    </div>
+
     <div class="cards-grid">
 
       <!-- Card 1: Israel Rocket Impacts -->
-      <a class="card" href="2023-israel-rocket-impact-osint/report/brief.pdf" target="_blank">
+      <a class="card" href="2023-israel-rocket-impact-osint/report/brief.pdf" target="_blank" data-tags="geolocation conflict verification israel-lebanon 2023">
         <div class="card-thumb">
           <img src="osint_cover.png"/>
           <div class="card-thumb-overlay"></div>
@@ -62,7 +89,7 @@
       </a>
 
       <!-- Card 2: Southern Cone Human Trafficking — TBA Corridor -->
-      <div class="card" style="cursor:default;">
+      <div class="card" style="cursor:default;" data-tags="human-rights geospatial satellite tba 2026">
         <div class="card-thumb">
           <img src="project2_cover.png" alt="Southern Cone Human Trafficking — TBA Corridor">
           <div class="card-thumb-overlay"></div>
@@ -86,7 +113,7 @@
               <div class="confidence-dot" style="background: var(--accent2); box-shadow: 0 0 6px rgba(0,184,217,0.5);"></div>
               Research Phase
             </div>
-            <span class="btn-read disabled">Coming Soon</span>
+            <a class="btn-read" href="southern-cone-tba-corridor/report/Project2_Brief.html" target="_blank">Read Brief →</a>
           </div>
         </div>
       </div>
@@ -122,5 +149,31 @@
     <span>Daniela Rutman</span> · OSINT Lab · All findings derived from public-domain sources · Built with HTML/CSS · GitHub Pages
   </footer>
 
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    const activeFilters = new Set();
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        if (f === 'all') {
+          activeFilters.clear();
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        } else {
+          document.querySelector('[data-filter="all"]').classList.remove('active');
+          if (activeFilters.has(f)) { activeFilters.delete(f); btn.classList.remove('active'); }
+          else                       { activeFilters.add(f);    btn.classList.add('active'); }
+          if (activeFilters.size === 0) document.querySelector('[data-filter="all"]').classList.add('active');
+        }
+        cards.forEach(card => {
+          if (activeFilters.size === 0) { card.style.display = ''; return; }
+          const tags = (card.dataset.tags || '').split(' ');
+          card.style.display = [...activeFilters].some(t => tags.includes(t)) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>

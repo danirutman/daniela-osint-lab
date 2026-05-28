@@ -180,6 +180,60 @@ main {
   background: var(--border);
 }
 
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  min-width: 52px;
+  margin-right: 4px;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 1px;
+  border: 1px solid rgba(0,229,160,0.15);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  border-color: rgba(0,229,160,0.4);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--dim);
+  border-color: rgba(0,229,160,0.45);
+  color: var(--accent);
+}
+
 /* ── Cards grid ── */
 .cards-grid {
   display: grid;
