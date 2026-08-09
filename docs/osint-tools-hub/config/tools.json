@@ -1,0 +1,24 @@
+{
+  "tools": [
+    {
+      "id": "bounding-box",
+      "name": "Bounding Box Comparison",
+      "description": "Compare evidence photos with map or satellite imagery",
+      "category": "Image Verification",
+      "url": "https://your-domain.example/bbox",
+      "status": "maintenance",
+      "icon": "bbox",
+      "color": "blue"
+    },
+    {
+      "id": "keyword-monitor",
+      "name": "Keyword Monitor",
+      "description": "Multi-language keyword search & alerts",
+      "category": "Monitoring",
+      "url": "https://your-domain.example/keyword-monitor",
+      "status": "maintenance",
+      "icon": "keyword",
+      "color": "purple"
+    }
+  ]
+}

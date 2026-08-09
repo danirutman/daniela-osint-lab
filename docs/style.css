@@ -378,6 +378,37 @@ main {
   background-size: 24px 24px;
 }
 
+/* ── Tools section ── */
+.tools-section-label { margin-top: 64px; }
+
+.tools-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tools-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,160,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,160,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.tools-thumb-icon {
+  width: 84%;
+  height: auto;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(0,229,160,0.2));
+  transition: transform 0.4s ease;
+}
+
+.card:hover .tools-thumb-icon { transform: scale(1.08); }
+
 /* ── Card body ── */
 .card-body {
   padding: 20px 20px 16px;

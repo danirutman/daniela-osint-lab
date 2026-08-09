@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Tools Hub</title>
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Applied before paint so the page never flashes the wrong theme.
+        (function () {
+            var saved = localStorage.getItem('osint_theme');
+            if (saved === 'light' || saved === 'dark') {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>OSINT Tools Hub</h1>
+                    <p class="subtitle">Research utilities for verification and monitoring.</p>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+                    <svg class="icon-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                        <circle cx="10" cy="10" r="3.5"/>
+                        <path d="M10 2v2M10 16v2M18 10h-2M4 10H2M15.5 4.5l-1.4 1.4M5.9 14.1l-1.4 1.4M15.5 15.5l-1.4-1.4M5.9 5.9L4.5 4.5"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 11.5A7 7 0 1 1 8.5 3a5.5 5.5 0 0 0 8.5 8.5z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="stats-row" id="stats-row"></div>
+
+        <main class="tools-grid" id="tools-grid"></main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

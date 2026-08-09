@@ -1,0 +1,448 @@
+/* OSINT Tools Hub — shares design tokens with the Bounding Box Comparison tool */
+:root {
+    --bg-primary: #f6f8f7;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #edf3f1;
+    --text-primary: #18201f;
+    --text-secondary: #64706d;
+    --text-muted: #86928f;
+    --border-color: #dce3e1;
+    --btn-bg: #ffffff;
+    --shadow: rgba(24, 32, 31, 0.1);
+    --accent-green: #00d9a3;
+    --accent-green-dark: #008f70;
+    --accent-cyan: #12b8c4;
+    --accent-amber: #b8860b;
+    --accent-blue: #3b7dd8;
+    --accent-purple: #8b5cf6;
+    --surface-hover: #edf3f1;
+    --surface-active: #e6f8f2;
+    --danger: #e0416b;
+    --font-display: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+
+    /* Tinted icon-chip backgrounds, one per accent hue */
+    --chip-green-bg: rgba(0, 143, 112, 0.12);
+    --chip-cyan-bg: rgba(18, 184, 196, 0.12);
+    --chip-amber-bg: rgba(184, 134, 11, 0.14);
+    --chip-blue-bg: rgba(59, 125, 216, 0.12);
+    --chip-purple-bg: rgba(139, 92, 246, 0.12);
+    --status-error-bg: rgba(224, 65, 107, 0.1);
+
+    --shadow-card: 0 2px 8px rgba(24, 32, 31, 0.06), 0 10px 28px rgba(24, 32, 31, 0.07);
+    --shadow-card-hover: 0 4px 12px rgba(24, 32, 31, 0.08), 0 16px 36px rgba(24, 32, 31, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg-primary: #1a1a2e;
+        --bg-secondary: #16213e;
+        --bg-tertiary: #1a2744;
+        --text-primary: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --text-muted: #6e6e73;
+        --border-color: #3d4a6a;
+        --btn-bg: #2d3a5a;
+        --shadow: rgba(0, 0, 0, 0.5);
+        --accent-green: #00d9a3;
+        --accent-green-dark: #00c793;
+        --accent-cyan: #12b8c4;
+        --accent-amber: #d4a017;
+        --accent-blue: #5b9bef;
+        --accent-purple: #a78bfa;
+        --surface-hover: #22315a;
+        --surface-active: #173d33;
+        --danger: #ff5c8a;
+
+        --chip-green-bg: rgba(0, 199, 147, 0.16);
+        --chip-cyan-bg: rgba(18, 184, 196, 0.18);
+        --chip-amber-bg: rgba(212, 160, 23, 0.18);
+        --chip-blue-bg: rgba(91, 155, 239, 0.18);
+        --chip-purple-bg: rgba(167, 139, 250, 0.18);
+        --status-error-bg: rgba(255, 92, 138, 0.16);
+
+        --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
+        --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.35), 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Explicit toggle choice wins over the system preference either direction */
+:root[data-theme="dark"] {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-tertiary: #1a2744;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
+    --border-color: #3d4a6a;
+    --btn-bg: #2d3a5a;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --accent-green: #00d9a3;
+    --accent-green-dark: #00c793;
+    --accent-cyan: #12b8c4;
+    --accent-amber: #d4a017;
+    --accent-blue: #5b9bef;
+    --accent-purple: #a78bfa;
+    --surface-hover: #22315a;
+    --surface-active: #173d33;
+    --danger: #ff5c8a;
+
+    --chip-green-bg: rgba(0, 199, 147, 0.16);
+    --chip-cyan-bg: rgba(18, 184, 196, 0.18);
+    --chip-amber-bg: rgba(212, 160, 23, 0.18);
+    --chip-blue-bg: rgba(91, 155, 239, 0.18);
+    --chip-purple-bg: rgba(167, 139, 250, 0.18);
+    --status-error-bg: rgba(255, 92, 138, 0.16);
+
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.35), 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 40px 20px; }
+
+header { margin-bottom: 32px; }
+
+.header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    padding-left: 16px;
+    border-left: 4px solid var(--accent-green-dark);
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin-top: 10px;
+    padding-left: 16px;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.theme-toggle {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle .icon-moon { display: none; }
+
+/* Light mode shows a moon (click to go dark); dark mode shows a sun */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-card);
+}
+
+.stat-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon svg { width: 20px; height: 20px; display: block; }
+
+.stat-icon.stat-icon-operational { background: var(--chip-green-bg); color: var(--accent-green-dark); }
+.stat-icon.stat-icon-maintenance { background: var(--chip-amber-bg); color: var(--accent-amber); }
+.stat-icon.stat-icon-down { background: var(--status-error-bg); color: var(--danger); }
+.stat-icon.stat-icon-total { background: var(--chip-purple-bg); color: var(--accent-purple); }
+
+.stat-text { display: flex; flex-direction: column; gap: 2px; }
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.stat-value.stat-operational { color: var(--accent-green-dark); }
+.stat-value.stat-maintenance { color: var(--accent-amber); }
+.stat-value.stat-down { color: var(--danger); }
+.stat-value.stat-total { color: var(--accent-purple); }
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+.tool-card {
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: 18px;
+    padding: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.tool-card.add-tool {
+    /* Roughly matches a real tool card's rendered height (icon + badge row +
+       description + Open Tool button) so the centering below has something
+       to center within even when this card ends up alone in its own grid
+       row (e.g. at the 2-column breakpoint, with only 2 real tools filling
+       row one). */
+    min-height: 240px;
+    border: 1px dashed var(--border-color);
+    box-shadow: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    opacity: 0.65;
+}
+
+/* .tool-description's flex-grow: 1 (below) exists to push port-text/buttons
+   to the bottom on real cards - but it's the last element here, so it was
+   swallowing the whole card's extra height itself instead of leaving room
+   for justify-content above to center the icon+name+description as a
+   group. Without growing, that group centers correctly. */
+.tool-card.add-tool .tool-description {
+    flex-grow: 0;
+}
+
+.tool-card.add-tool:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Top row: category label + status badge */
+.card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.category-label {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* Status badge (replaces the old glowing status dot) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.status-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.status-badge.operational {
+    color: var(--accent-green-dark);
+    background: var(--surface-active);
+    border-color: var(--accent-green-dark);
+}
+
+.status-badge.maintenance {
+    color: var(--accent-amber);
+    background: var(--chip-amber-bg);
+    border-color: var(--accent-amber);
+}
+
+.status-badge.down {
+    color: var(--danger);
+    background: var(--status-error-bg);
+    border-color: var(--danger);
+}
+
+/* Icon chip: consistent size/shape/stroke, only the accent hue differs */
+.tool-icon-chip {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tool-icon-chip svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.tool-icon-chip.icon-green { background: var(--chip-green-bg); color: var(--accent-green-dark); }
+.tool-icon-chip.icon-cyan { background: var(--chip-cyan-bg); color: var(--accent-cyan); }
+.tool-icon-chip.icon-amber { background: var(--chip-amber-bg); color: var(--accent-amber); }
+.tool-icon-chip.icon-blue { background: var(--chip-blue-bg); color: var(--accent-blue); }
+.tool-icon-chip.icon-purple { background: var(--chip-purple-bg); color: var(--accent-purple); }
+.tool-icon-chip.icon-muted { background: var(--bg-tertiary); color: var(--text-muted); }
+
+.tool-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.tool-name.muted { color: var(--text-muted); }
+
+.tool-description {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.tool-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+    border: 1px solid transparent;
+    background: var(--accent-green-dark);
+    border-color: var(--accent-green-dark);
+    color: #fff;
+    text-decoration: none;
+}
+
+.tool-button:hover:not(.disabled) {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.tool-button.disabled {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--text-muted);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.tool-button:focus-visible {
+    outline: 2px solid var(--accent-green-dark);
+    outline-offset: 2px;
+}
+
+.load-error {
+    grid-column: 1 / -1;
+    color: var(--danger);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 1.7rem; }
+    .header-top { flex-wrap: wrap; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 24px 16px; }
+}

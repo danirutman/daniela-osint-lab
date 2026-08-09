@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="cards-grid">
+    <div class="cards-grid" id="reports-grid">
 
       <!-- Card 1: Israel Rocket Impacts -->
       <div class="card" data-tags="geolocation conflict verification israel-lebanon 2023">
@@ -126,6 +126,65 @@
 
     </div>
 
+    <div class="section-label tools-section-label">
+      <h2>OSINT Tools</h2>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Tool card: OSINT Tools Hub -->
+      <div class="card">
+        <div class="card-thumb tools-thumb">
+          <svg class="tools-thumb-icon" viewBox="0 0 300 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="16" width="260" height="137" rx="6" fill="rgba(255,255,255,0.02)" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5"/>
+            <line x1="20" y1="38" x2="280" y2="38" stroke="currentColor" stroke-opacity="0.18" stroke-width="1"/>
+            <circle cx="32" cy="27" r="3" fill="currentColor" fill-opacity="0.35"/>
+            <circle cx="44" cy="27" r="3" fill="currentColor" fill-opacity="0.35"/>
+            <circle cx="56" cy="27" r="3" fill="currentColor" fill-opacity="0.35"/>
+
+            <rect x="34" y="50" width="80" height="34" rx="4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1"/>
+            <rect x="42" y="60" width="30" height="4" rx="2" fill="currentColor" fill-opacity="0.55"/>
+            <rect x="42" y="70" width="50" height="4" rx="2" fill="currentColor" fill-opacity="0.28"/>
+
+            <rect x="34" y="92" width="80" height="34" rx="4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1"/>
+            <rect x="42" y="102" width="30" height="4" rx="2" fill="currentColor" fill-opacity="0.55"/>
+            <rect x="42" y="112" width="45" height="4" rx="2" fill="currentColor" fill-opacity="0.28"/>
+
+            <rect x="128" y="50" width="118" height="76" rx="4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1"/>
+            <rect x="142" y="98" width="10" height="18" fill="currentColor" fill-opacity="0.35"/>
+            <rect x="158" y="86" width="10" height="30" fill="currentColor" fill-opacity="0.5"/>
+            <rect x="174" y="72" width="10" height="44" fill="currentColor" fill-opacity="0.75"/>
+            <rect x="190" y="90" width="10" height="26" fill="currentColor" fill-opacity="0.45"/>
+            <rect x="206" y="64" width="10" height="52" fill="currentColor" fill-opacity="0.9"/>
+            <rect x="222" y="80" width="10" height="36" fill="currentColor" fill-opacity="0.6"/>
+          </svg>
+          <div class="card-thumb-overlay"></div>
+          <span class="card-status published">Live</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">ONGOING</span>
+            <span class="card-region">Research Utilities</span>
+          </div>
+          <h3 class="card-title">OSINT Tools Hub</h3>
+          <p class="card-desc">A growing suite of self-built verification and monitoring utilities — image/imagery comparison, multi-language keyword tracking, and more.</p>
+          <div class="card-tags">
+            <span class="tag">Verification</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Toolkit</span>
+          </div>
+          <div class="card-footer">
+            <div class="confidence">
+              <div class="confidence-dot"></div>
+              Active
+            </div>
+            <a class="btn-read" href="osint-tools-hub/index.html" target="_blank">Open Hub →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- About -->
     <div class="about-section">
       <div class="section-label">
@@ -157,7 +216,7 @@
 
   <script>
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('#reports-grid .card');
     const activeFilters = new Set();
 
     filterBtns.forEach(btn => {
