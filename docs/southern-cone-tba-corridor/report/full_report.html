@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southern Cone Human Trafficking — Frontier Crossing Typology · Daniela Rutman</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f8fa;
+    --bg3: #f0f2f5;
+    --border: #e2e6eb;
+    --border2: #c8d0da;
+    --accent: #1a6b4a;
+    --accent2: #1a4fa6;
+    --accent3: #c94c1a;
+    --warn: #a06b00;
+    --text: #2c3540;
+    --text-dim: #6b7f94;
+    --text-bright: #0f1820;
+    --red: #c0392b;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .doc-header {
+    border-bottom: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg2);
+  }
+
+  .doc-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(26,107,74,0.04) 24px, rgba(26,107,74,0.04) 25px),
+      repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(26,107,74,0.025) 24px, rgba(26,107,74,0.025) 25px);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 52px 48px 44px;
+    position: relative;
+  }
+
+  .doc-classification {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .doc-classification::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    opacity: 0.3;
+  }
+
+  .tlp-badge {
+    background: rgba(26,107,74,0.08);
+    border: 1px solid rgba(26,107,74,0.35);
+    padding: 3px 10px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .pdf-download-btn {
+    position: absolute;
+    top: 52px;
+    right: 48px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+
+  .pdf-download-btn:hover {
+    background: #145a3d;
+    border-color: #145a3d;
+  }
+
+  .pdf-download-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-bright);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .doc-subtitle {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 36px;
+    letter-spacing: 0.02em;
+  }
+
+  .doc-meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    font-family: var(--mono);
+  }
+
+  .meta-cell {
+    background: var(--bg);
+    padding: 12px 16px;
+  }
+
+  .meta-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    font-size: 11px;
+    color: var(--text-bright);
+    font-weight: 500;
+  }
+
+  /* LAYOUT */
+  .main-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 48px 80px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* SIDEBAR NAV */
+  .sidebar {
+    position: sticky;
+    top: 28px;
+  }
+
+  .nav-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-item {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .nav-item:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: rgba(26,107,74,0.05);
+  }
+
+  .nav-sub {
+    margin-left: 12px;
+    margin-bottom: 2px;
+  }
+
+  .nav-sub-item {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 4px 0 4px 10px;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .nav-sub-item:hover        { color: var(--text);    border-left-color: var(--border2); background: var(--bg2); }
+  .nav-sub-item.alpha:hover  { color: var(--accent);  border-left-color: var(--accent);  background: rgba(26,107,74,0.05); }
+  .nav-sub-item.bravo:hover  { color: var(--accent2); border-left-color: var(--accent2); background: rgba(26,79,166,0.05); }
+  .nav-sub-item.charlie:hover{ color: var(--warn);    border-left-color: var(--warn);    background: rgba(160,107,0,0.05); }
+
+  /* REPORT BODY */
+  .report-body { min-width: 0; }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.08s; }
+  .section:nth-child(2) { animation-delay: 0.16s; }
+  .section:nth-child(3) { animation-delay: 0.24s; }
+  .section:nth-child(4) { animation-delay: 0.32s; }
+  .section:nth-child(5) { animation-delay: 0.40s; }
+  .section:nth-child(6) { animation-delay: 0.48s; }
+  .section:nth-child(7) { animation-delay: 0.56s; }
+  .section:nth-child(8) { animation-delay: 0.64s; }
+  .section:nth-child(9) { animation-delay: 0.72s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-bright);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 28px 0 12px;
+  }
+
+  p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 4px;
+    text-align: left;
+    text-indent: 1.5em;
+  }
+
+  /* SOURCE QUOTE BLOCKS */
+  .source-block {
+    border-left: 3px solid var(--border2);
+    padding: 14px 18px;
+    margin: 20px 0;
+    background: var(--bg2);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 11px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .data-table th {
+    text-align: left;
+    padding: 9px 14px;
+    background: var(--bg3);
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border2);
+  }
+
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .data-table tr:hover td { background: var(--bg2); }
+  .data-table td:first-child { color: var(--accent2); font-weight: 500; }
+
+  /* SITE COMPARISON TABLE */
+  .site-compare-wrap {
+    margin: 24px 0 28px;
+  }
+  .site-compare-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .site-compare-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .site-compare {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 11px;
+    border: 1px solid var(--border);
+  }
+  .site-compare th {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: var(--bg3);
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--border2);
+    border-right: 1px solid var(--border);
+    vertical-align: bottom;
+    line-height: 1.4;
+  }
+  .site-compare th:last-child { border-right: none; }
+
+  .site-compare td {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+  .site-compare td:last-child { border-right: none; }
+  .site-compare tr:last-child td { border-bottom: none; }
+
+  /* left accent stripe via first cell */
+  .site-compare .sc-site {
+    padding-left: 13px;
+    position: relative;
+  }
+  .site-compare .sc-site::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .sc-alpha .sc-site::before { background: var(--accent);  }
+  .sc-bravo .sc-site::before { background: var(--accent2); }
+  .sc-charlie .sc-site::before { background: var(--warn);  }
+
+  .sc-alpha  td { background: rgba(26,107,74,0.02);  }
+  .sc-bravo  td { background: rgba(26,79,166,0.02);  }
+  .sc-charlie td { background: rgba(160,107,0,0.02); }
+
+  /* sentinel badge */
+  .sc-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 2px 6px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .sc-badge.yes   { color: var(--accent);  border-color: rgba(26,107,74,0.35);  background: rgba(26,107,74,0.06);  }
+  .sc-badge.no    { color: var(--text-dim); border-color: var(--border);         background: var(--bg3); }
+  .sc-badge.high  { color: var(--accent);  border-color: rgba(26,107,74,0.35);  background: rgba(26,107,74,0.06);  }
+  .sc-badge.mod   { color: var(--warn);    border-color: rgba(160,107,0,0.35);  background: rgba(160,107,0,0.06);  }
+
+  .sc-dim { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+
+  /* CALLOUT */
+  .callout {
+    padding: 14px 18px;
+    margin: 18px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .callout.info { background: rgba(26,79,166,0.05); border-left: 3px solid var(--accent2); }
+  .callout.warn { background: rgba(160,107,0,0.05); border-left: 3px solid var(--warn); }
+  .callout.note { background: rgba(26,107,74,0.04); border-left: 3px solid var(--accent); }
+
+  .callout-icon {
+    font-family: var(--mono);
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .callout.info .callout-icon { color: var(--accent2); }
+  .callout.warn .callout-icon { color: var(--warn); }
+  .callout.note .callout-icon { color: var(--accent); }
+
+  .callout-text { font-size: 13px; color: var(--text); line-height: 1.75; }
+  .callout-text strong { color: var(--text-bright); }
+
+  /* ANALYTICAL OBS BLOCK */
+  .obs-block {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: rgba(26,107,74,0.04);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .obs-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .obs-text { font-size: 13.5px; color: var(--text); line-height: 1.8; }
+  .obs-text p { font-size: 13.5px; margin-bottom: 4px; }
+  .obs-text p:last-child { margin-bottom: 0; }
+  .obs-text strong { color: var(--text-bright); font-weight: 500; }
+
+  /* METHOD TAGS */
+  .method-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border: 1px solid;
+    text-transform: uppercase;
+  }
+
+  .tag-geo  { color: var(--accent);  border-color: rgba(26,107,74,0.3);  background: rgba(26,107,74,0.06); }
+  .tag-sat  { color: var(--accent2); border-color: rgba(26,79,166,0.3);  background: rgba(26,79,166,0.06); }
+  .tag-doc  { color: var(--warn);    border-color: rgba(160,107,0,0.3);  background: rgba(160,107,0,0.06); }
+  .tag-temp { color: var(--accent3); border-color: rgba(201,76,26,0.3);  background: rgba(201,76,26,0.06); }
+
+  /* SITE SUBSECTION */
+  .site-subsection {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-subsection:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .site-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+
+  .site-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: 1px solid;
+  }
+
+  .site-label.alpha  { color: var(--accent);  border-color: rgba(26,107,74,0.35);  background: rgba(26,107,74,0.06); }
+  .site-label.bravo  { color: var(--accent2); border-color: rgba(26,79,166,0.35);  background: rgba(26,79,166,0.06); }
+  .site-label.charlie{ color: var(--warn);    border-color: rgba(160,107,0,0.35);  background: rgba(160,107,0,0.06); }
+  .site-label.delta  { color: var(--accent3); border-color: rgba(201,76,26,0.35);  background: rgba(201,76,26,0.06); }
+
+  .site-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-bright);
+  }
+
+  .site-location-line {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .coords-inline {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* FIGURES */
+  figure {
+    margin: 20px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  figure img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+  }
+
+  figcaption {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    padding: 6px 10px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-top: none;
+    line-height: 1.6;
+  }
+
+  /* Neither display:grid nor display:flex (both tried) paginate reliably
+     through Chrome's --print-to-pdf pipeline (Skia/PDF backend) - grid
+     silently collapsed to a single column, and flex with a calc()
+     flex-basis was ALSO ignored, both confirmed by direct testing.
+     inline-block with an explicit width is the most conservative,
+     longest-supported way to do a multi-column print layout, and is what
+     actually renders correctly here. font-size:0/14px on the
+     container/children is the standard trick to remove the whitespace gap
+     inline-block leaves between elements from the HTML's own line breaks. */
+  .img-grid {
+    margin: 16px 0;
+    font-size: 0;
+  }
+
+  .img-grid > figure {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33.333% - 7px);
+    margin: 0 10px 0 0;
+    font-size: 14px;
+  }
+
+  .img-grid > figure:last-child { margin-right: 0; }
+
+  .img-grid.two > figure { width: calc(50% - 5px); }
+
+  .img-grid figure img  { height: 200px; object-fit: cover; width: 100%; }
+  .img-grid.two figure img { height: 220px; }
+
+  .img-slot {
+    background: var(--bg3);
+    border: 1px dashed var(--border2);
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* LISTA SUJA STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 24px;
+    font-family: var(--mono);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .stat-cell { background: var(--bg); padding: 16px 18px; }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .stat-value { font-size: 22px; color: var(--accent); font-weight: 500; line-height: 1; }
+  .stat-value.blue  { color: var(--accent2); }
+  .stat-value.amber { color: var(--warn); font-size: 14px; margin-top: 4px; }
+
+  /* SOURCE LIST */
+  .source-list { list-style: none; margin-top: 12px; }
+
+  .source-list li {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+  }
+
+  .source-list li:last-child { border-bottom: none; }
+
+  .src-key {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 110px;
+    letter-spacing: 0.05em;
+    padding-top: 1px;
+  }
+
+  .src-ref { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+  .src-ref a { color: var(--accent2); text-decoration: none; }
+  .src-ref a:hover { text-decoration: underline; }
+  .src-ref em { font-style: italic; color: var(--text); }
+
+  /* FOOTER */
+  .doc-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 24px 48px;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-right { color: var(--accent); letter-spacing: 0.12em; }
+
+  @media (max-width: 800px) {
+    .main-content { grid-template-columns: 1fr; padding: 28px 24px 60px; }
+    .sidebar { display: none; }
+    .doc-meta { grid-template-columns: 1fr 1fr; }
+    .img-grid > figure, .img-grid.two > figure { width: 100%; margin-right: 0; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    h1 { font-size: 22px; }
+    .header-inner { padding: 36px 24px 32px; }
+    .doc-footer { padding: 20px 24px; }
+    .pdf-download-btn { position: static; margin-bottom: 24px; }
+  }
+
+  /* ── Trafficking Flow Diagram ── */
+  .flow-wrap { margin: 32px 0 8px; }
+
+  .flow-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .flow-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    opacity: 0.3;
+  }
+
+  .flow-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-bright);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .flow-sub {
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+
+  /* vertical stacked flow */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .flow-node {
+    display: grid;
+    grid-template-columns: 36px 160px 1fr auto;
+    align-items: center;
+    gap: 0;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-top: none;
+    position: relative;
+  }
+  .flow-node:first-child { border-top: 1px solid var(--border); }
+
+  /* left accent bar per stage */
+  .flow-node::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+  }
+  .flow-node:nth-child(1)::before  { background: var(--accent);  }
+  .flow-node:nth-child(3)::before  { background: var(--warn);    }
+  .flow-node:nth-child(5)::before  { background: var(--accent2); }
+  .flow-node:nth-child(7)::before  { background: var(--accent3); }
+  .flow-node:nth-child(9)::before  { background: #c0392b;        }
+
+  .fn-num {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 14px 0 14px 16px;
+  }
+
+  .fn-head {
+    padding: 14px 16px 14px 12px;
+    border-right: 1px solid var(--border);
+  }
+  .fn-title {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-bright);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  .fn-body {
+    padding: 14px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    border-right: 1px solid var(--border);
+  }
+  .fn-body span {
+    font-size: 10.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .fn-body span::before { content: '– '; color: var(--border2); }
+
+  .fn-tag-cell {
+    padding: 14px 16px;
+  }
+  .fn-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    padding: 2px 7px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .fn-tag.green  { color: var(--accent);  border-color: rgba(26,107,74,0.3);  background: rgba(26,107,74,0.05);  }
+  .fn-tag.amber  { color: var(--warn);    border-color: rgba(160,107,0,0.3);  background: rgba(160,107,0,0.05);  }
+  .fn-tag.blue   { color: var(--accent2); border-color: rgba(26,79,166,0.3);  background: rgba(26,79,166,0.05);  }
+  .fn-tag.red    { color: var(--accent3); border-color: rgba(201,76,26,0.3);  background: rgba(201,76,26,0.05);  }
+  .fn-tag.dark   { color: #c0392b;        border-color: rgba(192,57,43,0.35); background: rgba(192,57,43,0.05);  }
+
+  /* arrow row between stages */
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    padding: 2px 0 2px 52px;
+    background: var(--bg);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .flow-arrow svg { width: 12px; height: 12px; color: var(--border2); }
+
+  .flow-note {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border2);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .flow-note-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .flow-note-text {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+  .flow-note-text strong { color: var(--text); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="header-inner">
+    <a class="pdf-download-btn" href="full_report_reader.pdf" download>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M4.5 7.5 8 11l3.5-3.5M2.5 13h11"/></svg>
+      Download PDF
+    </a>
+    <div class="doc-classification">
+      <span class="tlp-badge">TLP:CLEAR</span>
+      OSINT ANALYTICAL REPORT — UNCLASSIFIED
+    </div>
+    <h1>Southern Cone Human Trafficking —<br><span>Frontier Crossing Typology</span></h1>
+    <div class="doc-subtitle">Three-site typological assessment of crossing modalities across the Southern Cone frontier · Argentina · Brazil · Paraguay</div>
+    <div class="doc-meta">
+      <div class="meta-cell">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Daniela Rutman</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Classification</div>
+        <div class="meta-value">Unclassified // TLP:Clear</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Releasability</div>
+        <div class="meta-value">Public</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">May 2026</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Status</div>
+        <div class="meta-value" style="color:var(--accent);">● Final</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-content">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="nav-label">Contents</div>
+    <a href="#summary"          class="nav-item">1 · Executive Summary</a>
+    <a href="#methodology"      class="nav-item">2 · Methodology</a>
+    <a href="#overview"         class="nav-item">3 · Regional Overview</a>
+    <a href="#sites"            class="nav-item">4 · Site Analysis</a>
+    <div class="nav-sub">
+      <a href="#site-alpha"   class="nav-sub-item alpha">↳ Alpha · Foz do Iguaçu</a>
+      <a href="#site-bravo"   class="nav-sub-item bravo">↳ Bravo · Ponta Porã</a>
+      <a href="#site-charlie" class="nav-sub-item charlie">↳ Charlie · Posadas</a>
+    </div>
+    <a href="#lista-suja"       class="nav-item">5 · Lista Suja</a>
+    <a href="#criminal-networks"class="nav-item">6 · Criminal Networks</a>
+    <a href="#assessment"       class="nav-item">7 · Assessment</a>
+    <div class="nav-sub">
+      <a href="#confidence" class="nav-sub-item">↳ Confidence Table</a>
+    </div>
+    <a href="#conclusion"       class="nav-item">8 · Conclusion</a>
+    <div class="nav-sub">
+      <a href="#limitations"        class="nav-sub-item">↳ Limitations</a>
+      <a href="#forward-indicators" class="nav-sub-item">↳ Forward Indicators</a>
+    </div>
+    <a href="#sources"          class="nav-item">9 · Sources</a>
+  </aside>
+
+  <!-- REPORT BODY -->
+  <main class="report-body">
+
+    <!-- ── 1. EXECUTIVE SUMMARY ── -->
+    <section class="section" id="summary">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Executive Summary</h2>
+      </div>
+      <p>This report explores human trafficking infrastructure across three sites on the Southern Cone frontier between Argentina, Brazil, and Paraguay. The purposes of this report are to map out and corroborate exploitation patterns across the region and to independently produce OSINT reports. The assessment identifies and corroborates exploitation indicators across three distinct crossing modalities, shown through open source indicators including news, government sources, satellite imagery, and forced labour prosecution data.</p>
+
+      <p>The Lista Suja cross-reference against frontier municipalities found 13 entries documenting approximately 109 workers in conditions analogous to forced labour between 2022 and 2025, with livestock and ranching as the dominant sector. Site Alpha (Foz do Iguaçu / Lake Itaipú) — analyzed through multi-temporal Google Earth imagery and Sentinel-2 spectral bands — confirms persistent informal dock infrastructure at the reservoir shoreline, inconsistent with natural formation and consistent with established clandestine access. Site Charlie (Posadas / Encarnación) was verified using NDVI and Color Infrared (CIR) on Sentinel-2 imagery; across two acquisition dates, a persistent vegetation gap and a linear corridor inland from the riverbank are consistent with a vehicle access track outside formal inspection range.</p>
+
+      <p>Site Bravo (Ponta Porã) presented a structural finding of a different kind. The absence of any Lista Suja entries is itself analytically significant — the crossings most permissive to trafficking flow are simultaneously the least likely to generate prosecution records. No physical barrier exists at the border line, making it structurally unmonitorable at scale, a condition exploited by documented trafficking and narcotics networks.</p>
+
+      <p>The convergence of spectral indicators, enforcement data, and documented criminal network activity supports the assessment that the Southern Cone frontier remains one of the most structurally permissive trafficking environments in the region, sustained by geography, institutional capacity gaps, and the concealment afforded by the volume of legitimate cross-border commerce.</p>
+    </section>
+
+    <!-- ── 2. METHODOLOGY ── -->
+    <section class="section" id="methodology">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Methodology</h2>
+      </div>
+      <p>The methodology used involved different tools and approaches, given the nature of the sites and the overlapping of evidence. Firstly, journalism and the UNODC reports were used to understand the regional context and the characteristics of the trafficking purposes and routes.</p>
+
+      <p>In the second stance, Google Earth Pro was used as visual evidence for both formal and informal crossing points. Sentinel-2 L2A was used in the scope of hidden pathways that do not make direct contact with the official points of entry into the States. The NDVI (Normalized Difference Vegetation Index) layer was applied as it measures plant health by comparing how strongly a surface reflects near-infrared versus red light — healthy vegetation appears green, while bare soil, cleared land, and footpaths appear red or orange, creating a visible anomaly against surrounding vegetation. Color Infrared (CIR) makes healthy vegetation appear vivid magenta and any ground-level disturbance appear as a contrasting pale or beige feature. NDWI (Normalized Difference Water Index) maps the water-land boundary with precision, making irregularities, cleared banks, and informal embarkation points detectable. Each layer sees a different aspect of the same physical reality.</p>
+
+      <p>Finally, the released government file containing those prosecuted for the exploitation of people, Lista Suja, was used as a layer to establish a connection between the borders and the categorization of exploitative purposes.</p>
+
+      <div class="callout info">
+        <span class="callout-icon">i</span>
+        <div class="callout-text"><strong>Satellite imagery:</strong> Sentinel-2 L2A imagery accessed via Land Viewer (EO Browser). Acquisitions compared across a 15-month interval spanning different Southern Hemisphere seasons. Three spectral bands analyzed: NDVI, Color Infrared (CIR), and NDWI.</div>
+      </div>
+
+      <div class="callout info">
+        <span class="callout-icon">i</span>
+        <div class="callout-text"><strong>Lista Suja:</strong> Cadastro de Empregadores — Portaria Interministerial MTE/MDHC/MIR nº 18, 13/09/2024. Updated 6 October 2025; database refreshed 04/03/2026. Total entries: 669.</div>
+      </div>
+    </section>
+
+    <!-- ── 3. REGIONAL OVERVIEW ── -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Regional Overview</h2>
+      </div>
+
+      <p>Women and children have long been the main groups vulnerable to trafficking, especially in regions where climate disasters are frequent, as well as displacement issues. The majority of cases are related to the exploitation of labour, with sexual exploitation being particularly prevalent (United Nations Office on Drugs and Crime, 2024). The main region for these cases remains the Americas, with a greater predominance in South America (United Nations Office on Drugs and Crime, 2024). The Tri-Border Area (TBA) is the main operating route in Latin countries, due to its geographical position. The Paraná River borders Brazil, Argentina and Paraguay, where informal docks are often used for organized crime and all segments of trafficking.</p>
+
+      <p>Regarding Brazil, organized crime groups are usually the perpetrators of crimes exploiting women and girls and trafficking them along major highways such as BR-116. They target all states in the south of the country for this purpose (U.S. Department of State, 2025b). It is often the case that Paraguayan men end up in factories in Rio de Janeiro (U.S. Department of State, 2025c).</p>
+
+      <p>However, one of the most common practices in Paraguay is to force children into labour due to debts owed by their parents. For women, the main way of trafficking is for drug transportation and sexual exploitation. In the digital era, social media is now also used as another way to access people as victims, such as blackmailing intimate content (U.S. Department of State, 2025c). Agriculture, forced work and factories are the main sectors that victims of trafficking end up in Argentina, especially in harvesting and business (U.S. Department of State, 2025a).</p>
+
+      <p>Recent investigations by Paraguayan and Brazilian authorities revealed trafficking networks recruiting vulnerable Paraguayans with false promises of employment in Brazil, with victims allegedly destined for forced labour and servitude conditions near the Brazil–Paraguay border (G1, 2026).</p>
+
+      <p>Institutional dysfunction compounds the structural vulnerability of the corridor. Both Paraguay and Brazil are heavily affected by corruption, which enables criminal organisations to operate with relative impunity by exploiting poverty and weak state capacity. In Foz do Iguaçu, there are more than ten thousand Muslim residents, including a small Druze minority — a community whose presence has been linked to Hezbollah fundraising and logistical activity in the region. In Brazil, the case of Shukri Abu Baker — serving a sentence in the United States — and his brother Jamal, who allegedly held connections with Hamas and is currently in Syria, illustrate the overlap between transnational criminal and extremist networks in the TBA (Carneiro Filho, 2012).</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Domestic OCGs</td><td>Groups composed exclusively of Paraguayan nationals</td><td>Rotela Clan</td></tr>
+          <tr><td>Foreign-led OCGs</td><td>Led by non-Paraguayans; nationality determines identity</td><td>Chinese, Nigerian, Colombian, Serbian networks</td></tr>
+          <tr><td>Transnational OCGs</td><td>Identifiable by name regardless of leadership nationality</td><td>PCC, Comando Vermelho</td></tr>
+          <tr><td>Freelancers</td><td>Individuals participating without formal OCG membership</td><td>Logistics, transport, fraud operators</td></tr>
+          <tr><td>State-linked actors</td><td>Corrupt officials enabling networks through protection</td><td>Politicians, police, judges, military</td></tr>
+        </tbody>
+      </table>
+
+      <p>Despite being official crossings, weak oversight, corruption, and state neglect — alongside countless clandestine river ports — allow trafficking to operate largely in plain sight. Hezbollah's long-standing presence in the TBA is documented by Interpol, the US Treasury, and the Department of State; members and affiliates embed within the substantial Arab community and benefit from the black-market economy.</p>
+
+      <!-- ── Trafficking Flow Diagram ── -->
+      <div class="flow-wrap">
+        <div class="flow-label">FIGURE — ANALYTICAL FRAMEWORK</div>
+        <div class="flow-title">Trafficking Operational Flow — Southern Cone Frontier</div>
+        <div class="flow-sub">Five-stage model applied across Sites Alpha, Bravo, and Charlie. Each stage presents distinct observables for open-source collection.</div>
+
+        <div class="flow">
+
+          <div class="flow-node">
+            <span class="fn-num">01</span>
+            <div class="fn-head"><span class="fn-title">Recruitment Zone</span></div>
+            <div class="fn-body">
+              <span>Rural/peri-urban communities</span>
+              <span>Debt-based coercion</span>
+              <span>False employment offers</span>
+              <span>Social media recruitment</span>
+              <span>Criadazgo networks (PY)</span>
+            </div>
+            <div class="fn-tag-cell"><span class="fn-tag green">ORIGIN</span></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+          </div>
+
+          <div class="flow-node">
+            <span class="fn-num">02</span>
+            <div class="fn-head"><span class="fn-title">Transit Corridor</span></div>
+            <div class="fn-body">
+              <span>BR-386, BR-116, BR-255</span>
+              <span>Long-haul truck routes</span>
+              <span>Informal vehicle networks</span>
+              <span>Chaco overland paths</span>
+              <span>River access roads</span>
+            </div>
+            <div class="fn-tag-cell"><span class="fn-tag amber">MOVEMENT</span></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+          </div>
+
+          <div class="flow-node">
+            <span class="fn-num">03</span>
+            <div class="fn-head"><span class="fn-title">Crossing Site</span></div>
+            <div class="fn-body">
+              <span>α — Itaipú waterway</span>
+              <span>β — Ponta Porã urban seam</span>
+              <span>γ — Posadas–Encarnación bridge</span>
+              <span>Unmonitored river landings</span>
+              <span>Formal ports (concealment)</span>
+            </div>
+            <div class="fn-tag-cell"><span class="fn-tag blue">THRESHOLD</span></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+          </div>
+
+          <div class="flow-node">
+            <span class="fn-num">04</span>
+            <div class="fn-head"><span class="fn-title">Destination</span></div>
+            <div class="fn-body">
+              <span>São Paulo, Buenos Aires</span>
+              <span>Santiago (via long-haul)</span>
+              <span>International scam hubs</span>
+              <span>Rural agricultural zones</span>
+              <span>Urban domestic placements</span>
+            </div>
+            <div class="fn-tag-cell"><span class="fn-tag red">ABSORPTION</span></div>
+          </div>
+
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+          </div>
+
+          <div class="flow-node">
+            <span class="fn-num">05</span>
+            <div class="fn-head"><span class="fn-title">Exploitation Sector</span></div>
+            <div class="fn-body">
+              <span>Sex trafficking (40% SA)</span>
+              <span>Forced labor — agri/garment</span>
+              <span>Domestic servitude</span>
+              <span>Online fraud operations</span>
+              <span>Illegal cigarette factories</span>
+            </div>
+            <div class="fn-tag-cell"><span class="fn-tag dark">ENDPOINT</span></div>
+          </div>
+
+        </div><!-- /.flow -->
+
+        <div class="flow-note">
+          <span class="flow-note-label">NOTE</span>
+          <span class="flow-note-text">
+            Stage sequence is operational, not strictly linear. <strong>Crossing site selection (Stage 03)</strong> is driven by infrastructure permissiveness rather than geographic convenience — Site Bravo (Ponta Porã) presents no physical barrier, generating zero prosecution records despite high documented flow. Exploitation sector distribution follows UNODC (2024): forced labour 55%, sexual exploitation 40% in South America.
+          </span>
+        </div>
+      </div><!-- /.flow-wrap -->
+
+    </section>
+
+    <!-- ── 4. SITE ANALYSIS ── -->
+    <section class="section" id="sites">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Site Analysis</h2>
+      </div>
+
+      <p>Three sites were identified across the Southern Cone frontier, each representing a distinct crossing modality with different analytical implications for satellite observation and documentary corroboration. Sites were selected to reflect the range of formal and informal infrastructure through which trafficking flows operate — from clandestine waterway access to high-volume bridge crossings concealed within legal commerce.</p>
+
+      <div class="site-compare-wrap">
+        <div class="site-compare-label">TABLE — SITE COMPARISON MATRIX</div>
+        <table class="site-compare">
+          <colgroup>
+            <col style="width:72px">
+            <col style="width:96px">
+            <col style="width:148px">
+            <col style="width:108px">
+            <col style="width:72px">
+            <col style="width:116px">
+            <col style="width:60px">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Site</th>
+              <th>Border Type</th>
+              <th>Crossing Mechanism</th>
+              <th>Enforcement Presence</th>
+              <th>Sentinel Applied</th>
+              <th>Lista Suja Correlation</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="sc-alpha">
+              <td class="sc-site">
+                <span class="site-label alpha" style="font-size:9px;padding:2px 7px;">Alpha</span>
+                <div class="sc-dim">Foz do Iguaçu / Lake Itaipú</div>
+              </td>
+              <td>Reservoir (water)</td>
+              <td>Informal dock; concealment within high-volume formal bridge traffic</td>
+              <td>Bridge-limited; rural shoreline unsupervised</td>
+              <td><span class="sc-badge yes">YES</span><div class="sc-dim">NDVI · NDWI</div></td>
+              <td>Indirect — Paraná state entries (Foz do Iguaçu, Alto Paraíso)</td>
+              <td><span class="sc-badge mod">MOD</span></td>
+            </tr>
+            <tr class="sc-bravo">
+              <td class="sc-site">
+                <span class="site-label bravo" style="font-size:9px;padding:2px 7px;">Bravo</span>
+                <div class="sc-dim">Ponta Porã / P.J. Caballero</div>
+              </td>
+              <td>Open dry border</td>
+              <td>No physical barrier; continuous street grid across border line</td>
+              <td>Single Polícia Federal post; no barrier enforcement</td>
+              <td><span class="sc-badge no">NO</span><div class="sc-dim">No anomaly</div></td>
+              <td>Absent — zero entries; absence is the finding</td>
+              <td><span class="sc-badge high">HIGH</span></td>
+            </tr>
+            <tr class="sc-charlie">
+              <td class="sc-site">
+                <span class="site-label charlie" style="font-size:9px;padding:2px 7px;">Charlie</span>
+                <div class="sc-dim">Posadas / Encarnación</div>
+              </td>
+              <td>River crossing (Paraná)</td>
+              <td>Informal riverbank access 7 km beyond inspection perimeter; small boat crossings</td>
+              <td>Bridge-limited; 7 km river corridor unsupervised</td>
+              <td><span class="sc-badge yes">YES</span><div class="sc-dim">NDVI · CIR</div></td>
+              <td>Indirect — Mato Grosso do Sul corridor entries</td>
+              <td><span class="sc-badge mod">MOD</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure style="max-width:420px;margin-left:auto;margin-right:auto;">
+        <img src="datawrapper-southern-cone-human-trafficking-tba-corridor-.png" alt="Southern Cone Human Trafficking — Frontier Crossing Typology — site overview map" style="width:100%;height:auto;display:block;">
+        <figcaption>Fig. 1 — Southern Cone Human Trafficking · Frontier Crossing Typology · Site overview map. Map: Daniela Rutman · <a href="https://datawrapper.dwcdn.net/O3hz7/6/" target="_blank">Created with Datawrapper</a></figcaption>
+      </figure>
+
+      <!-- ── SITE ALPHA ── -->
+      <div class="site-subsection" id="site-alpha">
+        <div class="site-header">
+          <span class="site-label alpha">Alpha · Primary</span>
+          <span class="site-title">International Friendship Bridge / Informal Docks — Lake Itaipú</span>
+        </div>
+        <div class="site-location-line">Brazil · Paraguay border — Foz do Iguaçu, Paraná · Formal bridge: ~25°31′S, 54°35′W · Informal docks: 25°35′51″S, 54°35′50″W (~5 km S)</div>
+
+        <div class="method-tags">
+          <span class="tag tag-geo">Google Earth Pro</span>
+          <span class="tag tag-sat">Sentinel-2 NDVI / NDWI</span>
+          <span class="tag tag-temp">Multi-temporal</span>
+          <span class="tag tag-doc">Corroborated</span>
+        </div>
+
+        <figure style="margin-bottom:1.5rem; max-width:62%; margin-left:auto; margin-right:auto;">
+          <img src="alpha_bridge_overview.png" alt="Site Alpha — International Friendship Bridge overview" style="width:100%;border-radius:4px;display:block;">
+          <figcaption>Google Earth Pro · International Friendship Bridge (Ponte da Amizade) · Foz do Iguaçu, Brazil (left) — Ciudad del Este, Paraguay (right) · Formal crossing reference for Site Alpha · Informal dock AOI located ~5 km south along the reservoir shoreline</figcaption>
+        </figure>
+
+        <p>The International Friendship Bridge (Ponte da Amizade, ~25°31′S, 54°35′W) constitutes the formal reference crossing for this area, connecting Foz do Iguaçu, Brazil, to Ciudad del Este, Paraguay. However, the analytical focus of Site Alpha is the informal dock infrastructure documented approximately 5 km south of the bridge at 25°35′51″S, 54°35′50″W, along the Lake Itaipú reservoir shoreline. Despite the formal crossing infrastructure, the river corridor extends for more than 4,000 km, rendering constant surveillance of all access points operationally unfeasible — particularly in rural stretches beyond the bridge approaches ("Underworld Crossroads," 2024). The informal dock is consistent with unauthorized shoreline infrastructure documented in reporting on Lake Itaipú (Última Hora, n.d.). It cannot be excluded that the site may serve fishing or agricultural purposes without additional ground-truth corroboration.</p>
+
+        <div class="img-grid">
+          <figure>
+            <img src="alpha_ge_nov2019.png" alt="Site Alpha — Google Earth, November 2019" style="height:220px;object-fit:cover;">
+            <figcaption>Google Earth Pro · Site Alpha · Informal docks (25°35′51″S, 54°35′50″W) · Nov 2019 · Earliest available acquisition; shoreline access point identifiable at water's edge</figcaption>
+          </figure>
+          <figure>
+            <img src="alpha_ge_2021.png" alt="Site Alpha — Google Earth, informal docks ~2021" style="height:220px;object-fit:cover;">
+            <figcaption>Google Earth Pro · Site Alpha · Informal docks (25°35′51″S, 54°35′50″W) · ~2021 · Shoreline access point persistent; exposed bank consistent with lower seasonal water level</figcaption>
+          </figure>
+          <figure>
+            <img src="alpha_ge_jun2022.png" alt="Site Alpha — Google Earth, June 2022" style="height:220px;object-fit:cover;">
+            <figcaption>Google Earth Pro · Site Alpha · Informal docks (25°35′51″S, 54°35′50″W) · Jun 2022 · Increased vegetation cover; shoreline access point structurally consistent across a 3-year span</figcaption>
+          </figure>
+        </div>
+
+        <div class="callout note">
+          <span class="callout-icon">◆</span>
+          <div class="callout-text"><strong>Temporal finding:</strong> Three Google Earth acquisitions spanning November 2019 to June 2022 show the shoreline access point persistent across a 3-year interval and multiple seasonal conditions — inconsistent with temporary or incidental use. The structural consistency of the configuration across that timespan supports characterisation as established informal port infrastructure rather than opportunistic access.</div>
+        </div>
+
+        <div class="img-grid two" style="gap:16px;">
+          <figure>
+            <img src="alpha_ndvi_may2026.png" alt="Site Alpha — Sentinel-2 NDVI, May 2026" style="height:320px;object-fit:contain;background:#ffffff;">
+            <figcaption>NDVI · 06 May 2026 · Sentinel-2 L2A · AOI 25°35′51″S, 54°35′50″W · Low-NDVI zone at shoreline (red) indicating bare or stressed land at the water's edge; inconsistent with surrounding riparian vegetation</figcaption>
+          </figure>
+          <figure>
+            <img src="alpha_ndwi_may2026.png" alt="Site Alpha — Sentinel-2 NDWI, May 2026" style="height:320px;object-fit:contain;background:#ffffff;">
+            <figcaption>NDWI · 06 May 2026 · Sentinel-2 L2A · AOI 25°35′51″S, 54°35′50″W · Water extent and shoreline interface; irregular vegetation-water boundary consistent with informal embarkation infrastructure at the lake margin</figcaption>
+          </figure>
+        </div>
+
+        <div class="obs-block">
+          <div class="obs-label">Spectral Analysis — 06 May 2026</div>
+          <div class="obs-text">
+            <p><strong>NDVI:</strong> A low-NDVI zone is identifiable at the shoreline, indicating bare or stressed land at the water's edge. The signature is inconsistent with the surrounding riparian vegetation and is consistent with ground-level disturbance or cleared access — the type of footprint associated with informal dock infrastructure.</p>
+            <p><strong>NDWI:</strong> The water-vegetation boundary at the AOI shows an irregular shoreline interface. The pattern is consistent with informal embarkation infrastructure at the lake margin rather than natural shoreline formation.</p>
+            <p><strong>Combined interpretation:</strong> The spectral signatures reinforce the Google Earth temporal finding. Bare land at the shoreline persisting into the May 2026 acquisition, combined with the irregular water boundary, supports the characterisation of the site as an established informal access point rather than natural riverbank.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SITE BRAVO ── -->
+      <div class="site-subsection" id="site-bravo">
+        <div class="site-header">
+          <span class="site-label bravo">Bravo · Secondary</span>
+          <span class="site-title">Pedro Juan Caballero / Ponta Porã</span>
+        </div>
+        <div class="site-location-line">Paraguay · Brazil border — Open dry border · Mato Grosso do Sul</div>
+
+        <div class="method-tags">
+          <span class="tag tag-geo">Google Earth Pro</span>
+          <span class="tag tag-temp">Temporal Analysis</span>
+          <span class="tag tag-doc">Corroborated</span>
+        </div>
+
+        <div class="img-grid two">
+          <figure>
+            <img src="bravo_ge_closeup.png" alt="Site Bravo — close-up, Polícia Federal on Avenida Internacional">
+            <figcaption>Google Earth Pro · Site Bravo · Avenida Internacional · Aug 2025 · Polícia Federal post visible directly on border line; no physical barrier present</figcaption>
+          </figure>
+          <figure>
+            <img src="bravo_ge_wide.png" alt="Site Bravo — wide view of Pedro Juan Caballero / Ponta Porã">
+            <figcaption>Google Earth Pro · Site Bravo · Wide view · Aug 2025 · Both city street grids continue across the border without interruption</figcaption>
+          </figure>
+        </div>
+
+        <p>The site presents no physical barrier to cross-border movement. The international boundary is marked solely by the Avenida Internacional, a single avenue across which both city street grids continue without interruption. The only identifiable formal enforcement presence is a Brazilian Polícia Federal office directly adjacent to the border line. This configuration makes the crossing inherently unmonitorable at scale. The area has in fact been a focus point of investigations and properties were seized with the involvement of trafficking and illegal activities in operations such as Operation CAVOK by the Brazilian police, Polícia Federal (Polícia Federal, 2020).</p>
+
+        <div class="obs-block">
+          <div class="obs-label">Analytical Note</div>
+          <div class="obs-text">
+            <p>The <strong>absence of Lista Suja entries for Ponta Porã</strong> is itself analytically significant. One of Brazil's most documented informal crossing zones generates no forced labour prosecution record — consistent with the pattern of institutional neglect at open dry-border crossings that makes them operationally attractive to trafficking networks. The absence reflects inspection capacity constraints, not the absence of exploitation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SITE CHARLIE ── -->
+      <div class="site-subsection" id="site-charlie">
+        <div class="site-header">
+          <span class="site-label charlie">Charlie · Tertiary</span>
+          <span class="site-title">Posadas / Encarnación</span>
+        </div>
+        <div class="site-location-line">Argentina · Paraguay — Paraná River crossing · Puente San Roque González de Santa Cruz</div>
+
+        <div class="method-tags">
+          <span class="tag tag-geo">Google Earth Pro</span>
+          <span class="tag tag-sat">Sentinel-2 NDVI / CIR / NDWI</span>
+          <span class="tag tag-temp">Multi-temporal</span>
+          <span class="tag tag-doc">Corroborated</span>
+        </div>
+
+        <div class="img-grid two">
+          <figure>
+            <img src="charlie_ge_overview.png" alt="Site Charlie — Google Earth overview with bridge and informal point marked">
+            <figcaption>Google Earth Pro · Site Charlie · Overview · Puente San Roque González de Santa Cruz, formal customs and immigration posts marked · Informal access point 7 km downstream</figcaption>
+          </figure>
+          <figure>
+            <img src="charlie_ge_informal.png" alt="Site Charlie — Google Earth informal riverbank access point">
+            <figcaption>Google Earth Pro · Site Charlie · Informal riverbank access point · Feb 2025 · "Path" marker visible inland from shoreline, consistent with vehicle track</figcaption>
+          </figure>
+        </div>
+
+        <p>Unlike Site Bravo, where no physical barrier exists, Site Charlie has formal border infrastructure at the bridge crossing. However, the Paraná River corridor extends approximately 7 km beyond the inspection perimeter before the informal riverbank access point is reached. This configuration means formal enforcement is geographically limited to the bridge node — the broader river corridor remains structurally vulnerable to clandestine crossing, consistent with documented use of small boat crossings on the Paraná.</p>
+
+        <div class="coords-inline">Formal bridge: 27°22'12.02"S 55°51'50.79"W &nbsp;·&nbsp; Informal point: 27°26'3.19"S 55°46'8.06"W</div>
+
+        <h3>Sentinel-2 L2A Analysis — Site Charlie</h3>
+
+        <div class="callout info">
+          <span class="callout-icon">i</span>
+          <div class="callout-text"><strong>Methodology:</strong> Two Sentinel-2 L2A acquisitions compared across a 15-month interval spanning different Southern Hemisphere seasons (austral summer vs. early autumn). Two spectral bands analyzed per acquisition: NDVI and Color Infrared (CIR). AOI: 27.43422°S 55.76891°W.</div>
+        </div>
+
+        <h3 style="color:var(--warn); margin-top:20px;">April 2026 Acquisition</h3>
+        <div class="img-grid two">
+          <figure>
+            <img src="charlie_ndvi_apr2026.png" alt="NDVI — Site Charlie, 19 Apr 2026">
+            <figcaption>NDVI · 19 Apr 2026 · Sentinel-2 L2A · AOI 27.43°S 55.77°W · Early autumn</figcaption>
+          </figure>
+          <figure>
+            <img src="charlie_cir_apr2026.png" alt="Color Infrared — Site Charlie, 19 Apr 2026">
+            <figcaption>Color Infrared (CIR) · 19 Apr 2026 · Sentinel-2 L2A · AOI 27.43°S 55.77°W · Early autumn</figcaption>
+          </figure>
+        </div>
+
+        <h3 style="color:var(--warn);">January 2025 Acquisition</h3>
+        <div class="img-grid two">
+          <figure>
+            <img src="charlie_ndvi_jan2025.png" alt="NDVI — Site Charlie, 04 Jan 2025">
+            <figcaption>NDVI · 04 Jan 2025 · Sentinel-2 L2A · AOI 27.43°S 55.77°W · Austral summer — low-NDVI zone at shoreline (10.17 km²) indicating bare or stressed land</figcaption>
+          </figure>
+          <figure>
+            <img src="charlie_cir_jan2025.png" alt="Color Infrared — Site Charlie, 04 Jan 2025">
+            <figcaption>Color Infrared (CIR) · 04 Jan 2025 · Sentinel-2 L2A · AOI 27.43°S 55.77°W · Austral summer — pale linear corridor visible inland from riverbank</figcaption>
+          </figure>
+        </div>
+
+        <div class="obs-block">
+          <div class="obs-label">Analytical Observations</div>
+          <div class="obs-text">
+            <p>Four independent spectral analyses across two acquisition dates identify a consistent anomaly at the informal access point 7 km downstream of the formal Posadas/Encarnación crossing.</p>
+            <p><strong>NDVI (both dates):</strong> A vegetation gap at the shoreline is inconsistent with surrounding agricultural land use. The low-NDVI zone (-1 to 0.1) measures 10.17 km² in the January 2025 acquisition, indicating extensive bare or stressed land at the water's edge — consistent with seasonal low-water conditions exposing more riverbank.</p>
+            <p><strong>Color Infrared:</strong> A pale linear corridor is visible inland from the riverbank in the January 2025 CIR image, running through otherwise uniform agricultural plots. The geometry is inconsistent with field boundaries, which would appear sharper and more regular. The signature is consistent with a worn path or vehicle access track.</p>
+            <p><strong>Seasonal note:</strong> January 2025 (austral summer) shows greater shoreline exposure than April 2026 (early autumn), consistent with Paraná River seasonal water level fluctuations. This variability is operationally significant: reduced water levels in summer months expand accessible riverbank, potentially increasing activity at informal crossing points during periods of lower hydrological visibility.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── 5. LISTA SUJA ── -->
+    <section class="section" id="lista-suja">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Lista Suja — Regional Cross-Reference</h2>
+      </div>
+
+      <p>Brazil's <em>Cadastro de Empregadores</em> — known as the Lista Suja (Dirty List) — registers employers formally found to have subjected workers to conditions analogous to slavery. Updated periodically by the Ministry of Labour (MTE/MDHC/MIR), the March 2026 edition contains 669 entries spanning 2018–2025 fiscal inspection actions. Cross-referencing this dataset against the project's three site municipalities and documented route corridor reveals a pattern of forced labour prosecutions that directly overlaps with identified trafficking nodes (Ministério do Trabalho e Emprego et al., 2026). The entries are dated 2022–2025; this temporal distribution reflects when inspections reached the properties, not when exploitation began. It is not possible to infer an increase or decrease in violations from the date pattern alone — the list is only updated when enforcement actions occur, meaning undiscovered exploitation generates no record.</p>
+
+      <h3>Corumbá Cluster — Site Alpha Area (MS)</h3>
+
+      <p>Five distinct Lista Suja entries in Corumbá municipality, all dated 2024–2025, constitute the most analytically significant finding of this cross-reference. Corumbá sits on the Bolivia-Brazil frontier — a separate segment from the three assessed sites, treated here as a regional indicator of frontier labour exploitation rather than site-level evidence. All five entries involve livestock or ranching operations — the dominant labour exploitation sector in the Pantanal border zone, where workers are recruited from Paraguay and Bolivia under false promises and held on remote fazendas outside formal inspection reach.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>ID</th><th>Employer</th><th>Location</th><th>Workers</th><th>Sector</th><th>Year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6</td><td>Airton de Araujo Gomes</td><td>Fazenda São José, Corumbá/MS</td><td>9</td><td>Livestock (0161-0/03)</td><td>2024</td></tr>
+          <tr><td>102</td><td>Carlos Alberto Tavares Oliva</td><td>Fazenda Rebojo, Corumbá/MS</td><td>4</td><td>Cattle ranching (0151-2/01)</td><td>2025</td></tr>
+          <tr><td>121</td><td>Claudinei Leite de Queiroz</td><td>Fazenda Santo Antonio, Corumbá/MS</td><td>1</td><td>Cattle ranching (0151-2/01)</td><td>2024</td></tr>
+          <tr><td>392</td><td>LLB Prestadora de Serviços Ltda</td><td>Fazenda Campo Alegre, Corumbá/MS</td><td>8</td><td>Animal husbandry (0162-8/99)</td><td>2024</td></tr>
+          <tr><td>494</td><td>Nilton de Araujo Gomes</td><td>Fazenda São José, Corumbá/MS</td><td>7</td><td>Livestock (0161-0/03)</td><td>2024</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Porto Murtinho — Southern PY-BR Corridor (MS)</h3>
+
+      <p>Porto Murtinho, a secondary Paraguay crossing point south of the main TBA, registers two entries including a 2025 action — the most recent in the dataset. This corroborates the documentation of the southern Mato Grosso do Sul corridor as an active trafficking vector operating outside primary TBA inspection infrastructure.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>ID</th><th>Employer</th><th>Location</th><th>Workers</th><th>Sector</th><th>Year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>123</td><td>Claudio Martinho Rojas</td><td>Fazenda Bandeirantes, Porto Murtinho/MS</td><td>7</td><td>Livestock (0161-0/99)</td><td>2022</td></tr>
+          <tr><td>419</td><td>Marcio Antonio de Carvalho</td><td>Arrendamento Fazenda Bahia dos Carneiros, Porto Murtinho/MS</td><td>7</td><td>Cattle ranching (0151-2/01)</td><td>2025</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Foz do Iguaçu / Cascavel — Site Alpha Corridor (PR)</h3>
+
+      <p>Paraná state produces entries at Foz do Iguaçu itself and along the BR-277 corridor to Cascavel — the main highway connecting the TBA to the Atlantic port of Paranaguá. The construction sector entry in Foz do Iguaçu is consistent with the documented pattern of Paraguayan labour exploitation in Brazilian construction at the TBA crossing zone adjacent to Site Alpha's formal bridge reference point.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>ID</th><th>Employer</th><th>Location</th><th>Workers</th><th>Sector</th><th>Year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>388</td><td>Leonildo Antonio Mascarello</td><td>Canteiro de obra, Foz do Iguaçu/PR</td><td>1</td><td>Construction (4120-4/00)</td><td>2023</td></tr>
+          <tr><td>5</td><td>Alexandre Jucelino Zukovski</td><td>Cascavel/PR</td><td>1</td><td>Hardware/retail (4744-0/99)</td><td>2024</td></tr>
+          <tr><td>374</td><td>Kaio Cesar Rodrigues Rubio</td><td>Fazenda Santa Mercedes, Alto Paraíso/PR</td><td>13</td><td>Livestock (0119-9/06)</td><td>2024</td></tr>
+        </tbody>
+      </table>
+
+      <div class="obs-block">
+        <div class="obs-label">Cross-Reference Finding</div>
+        <div class="obs-text">
+          <p>The Lista Suja cross-reference identifies <strong>13 entries directly overlapping with the project's primary frontier municipalities</strong>, documenting at least 109 workers formally found in conditions analogous to slavery between 2022 and 2025. The geographic clustering is analytically significant in two respects.</p>
+          <p>First, Corumbá's concentration of five livestock-sector entries in a single municipality reflects the structural conditions that enable trafficking: geographic remoteness, weak labour inspection presence, and dependence on informal cross-border labour flows. Livestock operations in the Pantanal border zone function as a documented absorption point for trafficked labour.</p>
+          <p>Second, the <strong>absence of Ponta Porã</strong> (Site Bravo) from the Lista Suja is itself a finding — consistent with institutional neglect at open dry-border crossings, the same neglect that makes them operationally attractive to trafficking networks.</p>
+          <p><strong>Limitation:</strong> The Lista Suja captures formally investigated and prosecuted cases only. Given Brazil's known inspection capacity constraints, the dataset represents a floor, not a ceiling, of actual forced labour incidence in the corridor.</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-cell">
+          <div class="stat-label">Frontier entries</div>
+          <div class="stat-value">13</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Workers documented</div>
+          <div class="stat-value">109+</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Dominant sector</div>
+          <div class="stat-value amber">Livestock / Ranching</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Most recent action</div>
+          <div class="stat-value blue" style="font-size:13px; margin-top:4px;">2025 — Porto Murtinho</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. CRIMINAL NETWORKS ── -->
+    <section class="section" id="criminal-networks">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Criminal Networks</h2>
+      </div>
+
+      <p>The PCC (Primeiro Comando da Capital) was founded in August 1993 at the Taubaté detention facility in São Paulo — a prison known for its severe conditions — following the 1992 Carandiru massacre, which the group instrumentalized to consolidate its founding discourse of "paz, justiça e liberdade" against a repressive state (Barros, 2023). The organisation operates through a decentralised cell structure of <em>sintonias</em> — coordinated units functioning both inside and outside prisons, with representation at regional, state, national, and international levels (Barros, 2023). This structure is operationally significant for the Southern Cone frontier: the sintonia model allows the PCC to coordinate cross-border drug flows with Paraguay, Bolivia, and Colombia without centralising operations in any single node, producing a configuration structurally resilient to targeted enforcement (Almeida, 2023). The documented functional division of illicit activities — including dedicated units for financial operations, narcotics trafficking, and legal defence — combined with the organisation's established connections to corrupt public officials, enables simultaneous operation across formal crossings and clandestine border infrastructure (Almeida, 2023).</p>
+
+      <p>Comando Vermelho is also a major player in the region, though with less operational reach than the PCC. Other groups are less influential, including smaller factions such as the BNC and PGC. The Rotela Clan is regarded as the PCC's principal domestic rival in Paraguay (Small Wars Journal, 2024).</p>
+
+      <p>The Rotela Clan presents a distinct but complementary threat profile within the same corridor. A domestic Paraguayan criminal organisation founded in 2007, the clan originated in Tobatí before establishing a presence in Asunción's informal neighbourhoods and across Paraguay's prison infrastructure (InSight Crime, 2020). Its geographic concentration is analytically significant for this report: the clan's documented presence in the Pedro Juan Caballero prison system maps directly onto Site Bravo's crossing zone — the same open dry-border environment characterised by the absence of physical barriers and no Lista Suja enforcement record. The subsequent expansion of the clan beyond its initially identified penitentiaries to most of Paraguay's most conflictive prisons further reinforces the picture of a network with territorial reach across the primary corridor nodes examined here (InSight Crime, 2020).</p>
+
+      <p>Brazilian Federal Police identified Paraguayan women trafficked for sexual exploitation in Paraná, with authorities suspecting the use of river crossings along the Paraná River as the primary corridor between Paraguay and Brazil. The same illicit routes associated with human trafficking in the TBA are consistently used for drug trafficking, arms trafficking, cigarette smuggling, and contraband — demonstrating the convergence of organised criminal economies across the corridor (Gazeta do Povo, 2026).</p>
+
+      <p>In addition, there have been reports linking the Lebanese group Hezbollah with the region as well. This was especially brought to light in recent operations such as Operation Trapiche, where individuals in Brazil connected to the group were investigated on the grounds that they were aiding in planning attacks against Jews in Brazil and recruiting for the group (Terrorism, Transnational Crime and Corruption Center, 2024). The most explicit documented case of Hezbollah money laundering in the TBA is that of Assad Ahmad Barakat, who operated Hezbollah's fundraising and money laundering network from the Galería Page in Ciudad del Este — directly adjacent to the Site Alpha formal crossing zone. Barakat used a portfolio of legitimate businesses, including real estate and duty-free retail, to channel funds to the organisation. He was designated by the U.S. Treasury's Office of Foreign Assets Control (OFAC) as a Specially Designated Global Terrorist on June 10, 2004 (Counter Extremism Project, n.d.). In 2018, Argentine authorities separately froze assets of the broader Barakat Clan following a detected $10 million laundering attempt at a casino in Iguazú — again at the Site Alpha crossing reference point (JTA, 2018).</p>
+    </section>
+
+    <!-- ── 7. ASSESSMENT ── -->
+    <section class="section" id="assessment">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Assessment</h2>
+      </div>
+
+      <p>The overall region indicates that the current formal enforcement points and authority present in the surrounding area are not sufficient for the extensive territory, especially in rural areas and river basins, and that bribery may be used as a way to conceal crimes. In South America, the pattern seen is that women and girls are often targets for trafficking and exploitation, while men are usually subjected to forced labour, especially with the promise that Brazil will bring better opportunities in the bigger cities.</p>
+
+      <p>It is also noticeable that oftentimes these victims come from rural areas, as those in agricultural fields have less access to schools and education and are compelled to work to support their families. A factor that also has to be brought to light is the fact that while there is the presence of official border structures, there is a long-standing culture of bribery in the three countries.</p>
+
+      <p>Three analytical findings from the site-level and documentary evidence warrant specific assessment. First, the concentration of five Lista Suja livestock-sector entries in Corumbá — a single municipality on the Bolivia-Brazil border — is not incidental. Remote fazendas in the Pantanal border zone are structurally suited as labour absorption points: geographic remoteness, dependence on informal cross-border recruitment from Paraguay and Bolivia, and limited inspection reach combine to produce a documented pattern of workers held in conditions analogous to slavery that are only formally identified through targeted operations. Second, the Paraná River seasonal water level variation documented at Site Charlie carries operational implications — reduced water levels in austral summer months expand accessible riverbank, potentially correlating with higher clandestine crossing activity during periods of lower hydrological visibility. Third, Alpha, Bravo, and Charlie each represent a distinct crossing modality. Evidence is consistent with networks exploiting each; whether these specific sites constitute an operationally integrated system is not established by this assessment alone. Formal bridge infrastructure at Site Alpha facilitates concealment within high-volume commercial flow; the open dry border at Site Bravo enables frictionless individual movement outside formal inspection perimeters; and the river crossing at Site Charlie provides a clandestine modality available to networks using the frontier. This is corroborated by a documented case: a criminal organisation dismantled by Brazilian authorities in November 2023 used the Paraguay-Brazil land corridor to traffic Paraguayan workers — transported blindfolded by road across the border — into clandestine cigarette factories in Minas Gerais state, while simultaneously using truck routes to move the finished contraband product hidden among legitimate goods. The same network thus exploited the corridor for both labour trafficking and goods smuggling through the same crossing infrastructure, demonstrating in practice the multi-stream operational model that the three-site analysis identifies as structurally available (OCCRP, 2023).</p>
+
+      <div class="obs-block">
+        <div class="obs-label">Key Finding</div>
+        <div class="obs-text">
+          <p>The cross-referencing of Lista Suja data with site-level observations further reinforces the geographic concentration of exploitation in states bordering the Southern Cone frontier. The presence of both informal access points and high-volume formal crossings within the same region means that trafficking networks have structural flexibility — capable of adapting their operational methods depending on enforcement presence and seasonal conditions.</p>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-icon">!</span>
+        <div class="callout-text"><strong>Structural vulnerability:</strong> The absence of Lista Suja entries for Ponta Porã (Site Bravo) reflects inspection capacity constraints, not the absence of exploitation. Open dry-border crossings that are most permissive to trafficking flow are simultaneously the least likely to generate prosecution records — a structural gap that is unlikely to close without dedicated enforcement resources at informal crossings.</div>
+      </div>
+
+      <h3 id="confidence">Confidence Assessment</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Claim</th>
+            <th>Confidence</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Site Alpha informal dock infrastructure consistent with clandestine access</td>
+            <td>Moderate</td>
+            <td>Multi-temporal spectral and Google Earth indicators corroborated by open source reporting; agricultural or fishing use cannot be excluded without ground truth</td>
+          </tr>
+          <tr>
+            <td>Site Bravo constitutes a structurally unmonitorable crossing exploited by trafficking networks</td>
+            <td>High</td>
+            <td>Confirmed by law enforcement operations (Operation CAVOK); open border structure visually and documentarily verified; Rotela Clan presence at Pedro Juan Caballero documented</td>
+          </tr>
+          <tr>
+            <td>Site Charlie vehicle access track outside formal inspection range</td>
+            <td>Moderate</td>
+            <td>Spectral signatures consistent across two acquisition dates and two bands; alternative land use (agricultural track) cannot be ruled out without additional collection</td>
+          </tr>
+          <tr>
+            <td>Corumbá Lista Suja cluster reflects systematic forced labour absorption in the Pantanal border zone</td>
+            <td>High</td>
+            <td>Five formally adjudicated entries in a single municipality across multiple inspection actions; pattern consistent with documented Pantanal labour trafficking literature</td>
+          </tr>
+          <tr>
+            <td>Southern Cone frontier sites represent distinct crossing modalities consistent with trafficking network exploitation</td>
+            <td>Moderate</td>
+            <td>Analytical synthesis supported by network documentation and site-level findings; direct observation of system-level coordination is not available through OSINT alone</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── 8. CONCLUSION AND LIMITATIONS ── -->
+    <section class="section" id="conclusion">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2>Conclusion and Limitations</h2>
+      </div>
+
+      <h3 id="limitations">Limitations</h3>
+
+      <p>Despite the correlation and corroboration of the sites with news, government data, and the long documented activity in the region, it is not possible to confirm trafficking activity through open source methods alone. Satellite imagery can establish structural indicators consistent with illicit movement, but cannot confirm the nature or intent of activity taking place at observed locations. Similarly, the Lista Suja data establishes patterns of forced labour exploitation by geographic area but does not directly identify trafficking routes or the movement of victims. Ground-truth verification, access to classified law enforcement reporting, and human intelligence collection would be required to produce conclusive findings. It is also worth noting that open source data may reflect structural biases — formal and urban crossing points are more likely to be documented than remote or rural ones, which may contribute to an underrepresentation of activity in more isolated areas of the corridor.</p>
+
+      <h3 id="forward-indicators">Forward Indicators</h3>
+
+      <p>Observable changes in open source data would confirm or challenge the assessments produced here. At Site Alpha, persistence of the low-NDVI shoreline signature in future Sentinel-2 acquisitions would strengthen the characterisation of established informal infrastructure; its disappearance would warrant reassessment. At Site Bravo, any Lista Suja entry for Ponta Porã in a future database update would confirm that the current absence reflects inspection capacity rather than the absence of exploitation, and would warrant targeted follow-up collection. At Site Charlie, cross-referencing Paraná River water level data from Brazil's Agência Nacional de Águas (ANA) against trafficking reporting in the Posadas/Encarnación corridor during summer months would allow assessment of the proposed seasonal activity correlation. More broadly, new law enforcement operations in the Corumbá livestock sector, or the expansion of Lista Suja entries into previously unrepresented frontier municipalities, would provide updated baseline data for continued monitoring of the Southern Cone frontier.</p>
+
+      <h3>Conclusion</h3>
+
+      <div class="obs-block">
+        <div class="obs-label">Net Assessment</div>
+        <div class="obs-text">
+          <p>The multi-source OSINT assessment of the Southern Cone frontier demonstrates that trafficking infrastructure operates across a spectrum of formality — from fully clandestine riverbank access points to high-volume formal bridge crossings — with each modality presenting distinct vulnerabilities that conventional border enforcement is structurally ill-equipped to address alone.</p>
+          <p>The convergence of satellite indicators, prosecutorial data from the Lista Suja, and documented criminal network activity produces a coherent picture of a region where trafficking is sustained by geography, institutional capacity gaps, and the concealment that comes with the volume of legitimate commerce. Notably, the concentration of Lista Suja entries in Mato Grosso do Sul and Paraná directly corroborates the site-level observations at Sites Bravo and Alpha respectively, reinforcing the analytical value of cross-referencing enforcement data with geospatial indicators across disciplines.</p>
+          <p>While no single open source is sufficient to independently confirm trafficking activity, the convergence of multiple indicators across all three identified sites supports the overall assessment that the Southern Cone frontier remains one of the most structurally permissive trafficking environments in the region, and one that warrants continued open source monitoring.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. SOURCES ── -->
+    <section class="section" id="sources">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2>Sources</h2>
+      </div>
+      <ul class="source-list">
+        <li>
+          <span class="src-key">ALMEIDA 2023</span>
+          <span class="src-ref">Almeida, N. C. de. (2023). <em>Organização criminosa: mecanismos jurídicos de combate ao crime organizado</em> [Monografia Jurídica, Pontifícia Universidade Católica de Goiás, Escola de Direito e Relações Internacionais]. Repositório Acadêmico da Graduação PUC Goiás. <a href="https://repositorio.pucgoias.edu.br/jspui/handle/123456789/6418" target="_blank">repositorio.pucgoias.edu.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">BARROS 2023</span>
+          <span class="src-ref">Barros, G. U. S. (2023). <em>Atuação do Primeiro Comando da Capital (PCC) e mecanismos de prevenção e combate ao crime organizado no Brasil</em> [Trabalho de Conclusão de Curso, Universidade Federal de Mato Grosso do Sul, Faculdade de Direito]. Repositório Institucional da UFMS. <a href="https://repositorio.ufms.br/jspui/retrieve/31b1fd84-77b8-4da1-bace-c83484efdd4c/606.pdf" target="_blank">repositorio.ufms.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">CARNEIRO 2012</span>
+          <span class="src-ref">Carneiro Filho, C. P. (2012). Tríplice fronteira Brasil-Argentina-Paraguai: transfronteirização através do crime. <em>Relações Internacionais no Mundo Atual</em>, <em>2</em>(16), 84–101. <a href="https://revista.unicuritiba.edu.br/index.php/RIMA/article/view/499" target="_blank">revista.unicuritiba.edu.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">ESA / SENTINEL</span>
+          <span class="src-ref">European Space Agency. (2025, January 4; 2026, April 19; 2026, May 6). <em>Sentinel-2 L2A imagery</em> [Remote sensing data]. Land Viewer (EO Browser). AOI Site Alpha: 25°35′51″S, 54°35′50″W (Lake Itaipú informal dock). AOI Site Charlie: 27.43422°S, 55.76891°W (Posadas/Encarnación informal access point).</span>
+        </li>
+        <li>
+          <span class="src-key">CEP / BARAKAT</span>
+          <span class="src-ref">Counter Extremism Project. (n.d.). <em>Assad Ahmad Barakat</em>. Counter Extremism Project. <a href="https://www.counterextremism.com/extremists/assad-ahmad-barakat" target="_blank">counterextremism.com</a></span>
+        </li>
+        <li>
+          <span class="src-key">G1 2026</span>
+          <span class="src-ref">G1. (2026, March 17). Brasileiros são presos por tráfico de paraguaios próximo ao PR. <em>G1 — Globo</em>. <a href="https://g1.globo.com/pr/oeste-sudoeste/noticia/2026/03/17/brasileiros-sao-presos-por-trafico-de-paraguaios-proximo-ao-pr.ghtml" target="_blank">g1.globo.com</a></span>
+        </li>
+        <li>
+          <span class="src-key">GAZETA DO POVO</span>
+          <span class="src-ref">Gazeta do Povo. (2026). PF investiga tráfico de mulheres na tríplice fronteira para exploração sexual. <em>Gazeta do Povo</em>. <a href="https://www.gazetadopovo.com.br/parana/pf-investiga-trafico-de-mulheres-triplice-fronteira-para-exploracao-sexual/" target="_blank">gazetadopovo.com.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">JTA 2018</span>
+          <span class="src-ref">Jewish Telegraphic Agency. (2018, July 16). Argentina freezes assets of suspected Hezbollah fundraising network. <em>JTA</em>. <a href="https://www.jta.org/2018/07/16/global/argentina-freezes-assets-suspected-hezbollah-fundraising-network" target="_blank">jta.org</a></span>
+        </li>
+        <li>
+          <span class="src-key">OCCRP 2023</span>
+          <span class="src-ref">Organized Crime and Corruption Reporting Project. (2023, November 14). Brazil busts cigarette smuggling and counterfeiting ring that enslaved Paraguayans. <em>OCCRP</em>. <a href="https://www.occrp.org/en/news/brazil-busts-cigarette-smuggling-and-counterfeiting-ring-that-enslaved-paraguayans" target="_blank">occrp.org</a></span>
+        </li>
+        <li>
+          <span class="src-key">GOOGLE EARTH</span>
+          <span class="src-ref">Google. (n.d.). <em>Google Earth</em> [Web mapping service]. <a href="https://earth.google.com/web/" target="_blank">earth.google.com</a></span>
+        </li>
+        <li>
+          <span class="src-key">INSIGHT CRIME</span>
+          <span class="src-ref">InSight Crime. (2020, August 23). <em>Clan Rotela</em>. InSight Crime. <a href="https://insightcrime.org/es/noticias-crimen-organizado-paraguay/clan-rotela/" target="_blank">insightcrime.org</a></span>
+        </li>
+        <li>
+          <span class="src-key">IOM</span>
+          <span class="src-ref">International Organization for Migration. (n.d.). <em>Strengthening efforts to counter trafficking in Argentina, Brazil, and Paraguay</em>. <a href="https://www.iom.int/news/strengthening-efforts-counter-trafficking-argentina-brazil-and-paraguay" target="_blank">iom.int</a></span>
+        </li>
+        <li>
+          <span class="src-key">LISTA SUJA</span>
+          <span class="src-ref">Ministério do Trabalho e Emprego, Ministério dos Direitos Humanos e da Cidadania, &amp; Ministério da Integração e do Desenvolvimento Regional. (2026, March 4). <em>Cadastro de empregadores [Lista Suja]</em> [Government database; Portaria Interministerial MTE/MDHC/MIR n° 18, September 13, 2024; 669 entries]. Government of Brazil. <a href="https://ipe.sit.trabalho.gov.br" target="_blank">ipe.sit.trabalho.gov.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">POLÍCIA FEDERAL</span>
+          <span class="src-ref">Polícia Federal. (2020, August). <em>Operação Cavok: PF combate o tráfico de drogas na fronteira com o Paraguai</em>. Government of Brazil. <a href="https://www.gov.br/pf/pt-br/assuntos/noticias/2020/08-noticias-de-agosto-de-2020/operacao-cavok-pf-combate-o-trafico-de-drogas-na-fronteira-com-o-paraguai" target="_blank">gov.br</a></span>
+        </li>
+        <li>
+          <span class="src-key">TRACCC 2024</span>
+          <span class="src-ref">Terrorism, Transnational Crime and Corruption Center. (2024). <em>Tri-border area report</em> [Report]. George Mason University. <a href="https://traccc.gmu.edu/wp-content/uploads/2024/11/Final-TBA.pdf" target="_blank">traccc.gmu.edu</a></span>
+        </li>
+        <li>
+          <span class="src-key">ÚLTIMA HORA</span>
+          <span class="src-ref">Última Hora. (n.d.). Puerto clandestino en reserva Itaipú funciona en total impunidad. <em>Última Hora</em>. <a href="https://www.ultimahora.com/puerto-clandestino-reserva-itaipu-funciona-total-impunidad-n2838535" target="_blank">ultimahora.com</a></span>
+        </li>
+        <li>
+          <span class="src-key">SWJ 2024</span>
+          <span class="src-ref">Underworld crossroads: Dark networks and global illicit trade in the tri-border area. (2024, August 6). <em>Small Wars Journal</em>. <a href="https://smallwarsjournal.com/2024/08/06/underworld-crossroads-dark-networks-and-global-illicit-trade-tri-border-area-between/" target="_blank">smallwarsjournal.com</a></span>
+        </li>
+        <li>
+          <span class="src-key">UNODC 2024</span>
+          <span class="src-ref">United Nations Office on Drugs and Crime. (2024). <em>Global report on trafficking in persons 2024</em>. <a href="https://www.unodc.org/documents/data-and-analysis/glotip/2024/GLOTIP2024_BOOK.pdf" target="_blank">unodc.org</a></span>
+        </li>
+        <li>
+          <span class="src-key">STATE / AR</span>
+          <span class="src-ref">U.S. Department of State. (2025a). <em>2025 Trafficking in Persons Report: Argentina</em>. <a href="https://www.state.gov/reports/2025-trafficking-in-persons-report/argentina/" target="_blank">state.gov</a></span>
+        </li>
+        <li>
+          <span class="src-key">STATE / BR</span>
+          <span class="src-ref">U.S. Department of State. (2025b). <em>2025 Trafficking in Persons Report: Brazil</em>. <a href="https://www.state.gov/reports/2025-trafficking-in-persons-report/brazil/" target="_blank">state.gov</a></span>
+        </li>
+        <li>
+          <span class="src-key">STATE / PY</span>
+          <span class="src-ref">U.S. Department of State. (2025c). <em>2025 Trafficking in Persons Report: Paraguay</em>. <a href="https://www.state.gov/reports/2025-trafficking-in-persons-report/paraguay" target="_blank">state.gov</a></span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>Southern Cone Human Trafficking — Frontier Crossing Typology · Daniela Rutman · May 2026</div>
+  <div class="footer-right">TLP:CLEAR · UNCLASSIFIED</div>
+</div>
+
+</body>
+</html>
