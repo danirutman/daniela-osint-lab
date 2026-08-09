@@ -5,8 +5,8 @@
       "name": "Bounding Box Comparison",
       "description": "Compare evidence photos with map or satellite imagery",
       "category": "Image Verification",
-      "url": "https://your-domain.example/bbox",
-      "status": "maintenance",
+      "url": "https://osint-bounding-box.onrender.com",
+      "status": "operational",
       "icon": "bbox",
       "color": "blue"
     },
