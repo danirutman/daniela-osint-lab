@@ -15,8 +15,8 @@
       "name": "Keyword Monitor",
       "description": "Multi-language keyword search & alerts",
       "category": "Monitoring",
-      "url": "https://your-domain.example/keyword-monitor",
-      "status": "maintenance",
+      "url": "https://osint-keyword-monitor.onrender.com",
+      "status": "operational",
       "icon": "keyword",
       "color": "purple"
     }
